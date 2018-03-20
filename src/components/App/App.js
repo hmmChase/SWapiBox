@@ -1,14 +1,48 @@
 import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
+import Favorite from '../Favorite/Favorite';
+import CardContainer from '../CardContainer/CardContainer';
+import ApiData from '../../ApiData/ApiData';
 import './App.css';
 
+
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      apiData: [],
+      favorite: []
+    };
+  }
+
+  componentDidMount() {
+    this.fetchApiData();
+    this.fetchCrawl();
+  }
+
+  fetchApiData() {
+  }
+
+
+  fetchCrawl() {
+    console.log('crawl');
+  }
+
+
+
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">SWapiBox</h1>
+      <main>
+        <header>
+          <h1>SWapiBox</h1>
+          <Nav />
+          <Favorite />
         </header>
-      </div>
+        <CardContainer />
+      </main>
     );
   }
 }

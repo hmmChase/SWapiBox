@@ -1,17 +1,17 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import App from './App';
+import Card from './Card';
 
-describe('App', () => {
-  let app;
+describe('Card', () => {
+  let card;
 
   beforeEach(() => {
-    app = shallow(<App />);
+    card = shallow(<Card />);
   });
 
   it('matches the snapshot', () => {
-    expect(app).toMatchSnapshot();
+    expect(card).toMatchSnapshot();
   });
 
 });

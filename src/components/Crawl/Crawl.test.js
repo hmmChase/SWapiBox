@@ -1,17 +1,17 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import App from './App';
+import Crawl from './Crawl';
 
-describe('App', () => {
-  let app;
+describe('Crawl', () => {
+  let crawl;
 
   beforeEach(() => {
-    app = shallow(<App />);
+    crawl = shallow(<Crawl />);
   });
 
   it('matches the snapshot', () => {
-    expect(app).toMatchSnapshot();
+    expect(crawl).toMatchSnapshot();
   });
 
 });
