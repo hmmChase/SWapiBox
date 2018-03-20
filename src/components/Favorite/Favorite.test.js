@@ -1,17 +1,17 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import App from './App';
+import Favorite from './Favorite';
 
-describe('App', () => {
-  let app;
+describe('Favorite', () => {
+  let favorite;
 
   beforeEach(() => {
-    app = shallow(<App />);
+    favorite = shallow(<Favorite />);
   });
 
   it('matches the snapshot', () => {
-    expect(app).toMatchSnapshot();
+    expect(favorite).toMatchSnapshot();
   });
 
 });

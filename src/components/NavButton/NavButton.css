@@ -1,0 +1,14 @@
+button {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  background: none;
+  border: 2px solid seagreen;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+
+}
+
+button:hover {
+  background:rgba(0,0,0,0.1);
+}

@@ -1,17 +1,17 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import App from './App';
+import NavButton from './NavButton';
 
-describe('App', () => {
-  let app;
+describe('NavButton', () => {
+  let navButton;
 
   beforeEach(() => {
-    app = shallow(<App />);
+    navButton = shallow(<NavButton />);
   });
 
   it('matches the snapshot', () => {
-    expect(app).toMatchSnapshot();
+    expect(navButton).toMatchSnapshot();
   });
 
 });
