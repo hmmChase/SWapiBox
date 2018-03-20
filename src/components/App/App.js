@@ -22,11 +22,12 @@ class App extends Component {
   }
 
   fetchApiData() {
+
   }
 
 
   fetchCrawl() {
-    console.log('crawl');
+    console.log('crawled');
   }
 
 
