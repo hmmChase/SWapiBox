@@ -6,7 +6,6 @@ const Card = () => {
 
   return (
     <article>
-      Ima Card
     </article>
   );
 };
