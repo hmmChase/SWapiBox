@@ -5,12 +5,15 @@ import './NavButton.css';
 const NavButton = (props) => {
 
   return (
-    <button>{props.name}</button>
+    <button
+      onClick={() => props.renderCategory(props.category)}
+    >{props.category}
+    </button>
   );
 };
 
 NavButton.propTypes = {
-  name: PropTypes.string
+  category: PropTypes.string
 };
 
 
