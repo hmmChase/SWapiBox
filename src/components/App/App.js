@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-// import fetchedData from '../../apiData';
+import { fetchFilmCrawl, fetchData } from '../../apiData';
 import './App.css';
 
 
@@ -10,55 +10,25 @@ class App extends Component {
     super();
 
     this.state = {
-      apiData: [],
-      favorite: [],
       category: '',
-      randomFilmCrawl: ''
+      randomFilmCrawl: {},
+      favorite: [],
+      categoryData: []
     };
   }
 
-  componentDidMount() {
-    this.fetchFilmCrawl();
-  }
-
-  getRandomCrawl(data) {
-    const crawls = data.results.map(result => {
-      // console.log(result);
-      return { 
-        title: result.title,
-        date: result.release_date,
-        crawl: result.opening_crawl
-      };
-    });
-
-    const random = Math.floor(Math.random() * crawls.length);
-
-    return crawls[random];
-  }
-
-  async fetchFilmCrawl() {
-    const root = 'https://swapi.co/api';
-
-    // fetch(`${root}/films/`)
-    //   .then(response => response.json())
-    //   .then(data => this.setState({ filmCrawls: data }))
-    //   .catch(error => console.log('Failed to fetch:', error));
-
-    const response = await fetch(`${root}/films/`);
-    const data = await response.json();
-    const randomFilmCrawl = await this.getRandomCrawl(data);
-    this.setState({ randomFilmCrawl });
-  }
-
-
-  renderCategory = category => {
-
+  async componentDidMount() {
     this.setState({
-      category
+      randomFilmCrawl: await fetchFilmCrawl()
     });
-
   }
 
+  renderCategory = async (category) => {
+    this.setState({
+      category,
+      categoryData: await fetchData(category)
+    });
+  }
 
   render() {
     return (
@@ -66,6 +36,7 @@ class App extends Component {
         <Header renderCategory={this.renderCategory} />
         <Main
           category={this.state.category}
+          categoryData={this.state.categoryData}
           randomFilmCrawl={this.state.randomFilmCrawl}
         />
       </div>

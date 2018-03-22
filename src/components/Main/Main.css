@@ -1,17 +1,21 @@
 main {
-  width: 100%;
   padding: 20px;
-  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+
 }
 
 .film-crawl {
-  overflow: hidden;
   text-align: center;
   width: 100%;
 }
 
 .star-wars {
   display: flex;
+  overflow: hidden;
   /* justify-content: center; */
   /* position: relative; */
   height: 800px;
@@ -32,13 +36,21 @@ main {
   animation: crawl 60s linear;
 }
 
+article {
+  height: 250px;
+  width: 150px;
+  background: lightblue;
+  margin: 10px;
+}
+
 @keyframes crawl {
-	0% {
+  0% {
     top: -100px;
-    transform: rotateX(20deg)  translateZ(0);
+    transform: rotateX(20deg) translateZ(0);
   }
-	100% { 
+  100% {
     top: -6000px;
     transform: rotateX(25deg) translateZ(-2500px);
-  } 
+  }
 }
+

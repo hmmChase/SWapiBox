@@ -13,7 +13,8 @@ const NavButton = (props) => {
 };
 
 NavButton.propTypes = {
-  category: PropTypes.string
+  category: PropTypes.string,
+  renderCategory: PropTypes.func
 };
 
 
