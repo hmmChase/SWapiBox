@@ -2,10 +2,11 @@ button {
   font-family: 'Exo 2', sans-serif;
   font-weight: 600;
   background: none;
-  border: 2px solid seagreen;
+  border: 2px solid yellow;
   cursor: pointer;
   font-size: 20px;
   padding: 10px;
+  border-radius: 10px;
 
 }
 

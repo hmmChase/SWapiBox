@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import { fetchFilmCrawl, fetchData } from '../../apiData';
+import { fetchFilmCrawl, fetchCategoryData } from '../../apiData';
 import './App.css';
 
 
@@ -17,6 +17,13 @@ class App extends Component {
     };
   }
 
+  // localstorage
+  // componentDidUpdate
+  // check if state changed
+  // set to localstorage
+  // componentDidMount
+  //  pull from localStorage if available
+
   async componentDidMount() {
     this.setState({
       randomFilmCrawl: await fetchFilmCrawl()
@@ -26,7 +33,7 @@ class App extends Component {
   renderCategory = async (category) => {
     this.setState({
       category,
-      categoryData: await fetchData(category)
+      categoryData: await fetchCategoryData(category)
     });
   }
 

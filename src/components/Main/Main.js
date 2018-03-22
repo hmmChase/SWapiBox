@@ -14,20 +14,40 @@ class Main extends Component {
     if (this.props.category === "people") {
       return this.props.categoryData.map((person, index) => {
         return (
-          <article key={index}>{person.name}</article>
+          <article key={index}>
+            <p>{person.name}</p>
+            <p>{person.species}</p>
+            <p>{person.homeWorld}</p>
+            <p>{person.population}</p>
+          </article>
         );
 
       });
     } else if (this.props.category === "planets") {
       return this.props.categoryData.map((planet, index) => {
         return (
-          <article key={index}>{planet.name}</article>
+          <article key={index}>
+            <p>{planet.name}</p>
+            <p>{planet.terrain}</p>
+            <p>{planet.population}</p>
+            <p>{planet.climate}</p>
+            {
+              planet.residents.map((resident, index) => {
+                return <p key={index}>{resident}</p>;
+              })
+            }
+          </article>
         );
       });
     } else if (this.props.category === "vehicles") {
       return this.props.categoryData.map((vehicle, index) => {
         return (
-          <article key={index}>{vehicle.name}</article>
+          <article key={index}>
+            <p>{vehicle.name}</p>
+            <p>{vehicle.model}</p>
+            <p>{vehicle.class}</p>
+            <p>{vehicle.passengers}</p>
+          </article>
         );
       });
     }
