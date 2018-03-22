@@ -39,8 +39,10 @@ main {
 article {
   height: 250px;
   width: 150px;
-  background: lightblue;
+  color: white;
+  /* background: lightblue; */
   margin: 10px;
+  border: 2px solid yellow;
 }
 
 @keyframes crawl {
