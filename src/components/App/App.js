@@ -30,7 +30,7 @@ class App extends Component {
     });
   }
 
-  renderCategory = async (category) => {
+  renderCategory = async category => {
     this.setState({
       category,
       categoryData: await fetchCategoryData(category)
@@ -38,13 +38,12 @@ class App extends Component {
   }
 
   renderFavorites = () => {
-    console.log('favorites')
     this.setState({
       categoryData: this.state.favorites
     });
   }
 
-  addToFavorites = (dataObj) => {
+  addToFavorites = dataObj => {
     this.setState({
       favorites: [...this.state.favorites, dataObj]
     });

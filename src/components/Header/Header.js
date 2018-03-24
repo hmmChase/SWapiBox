@@ -1,11 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NavButton from '../NavButton/NavButton';
 import Favorites from '../Favorites/Favorites';
 import './Header.css';
 
 const Nav = (props) => {
-
-
   return (
     <header>
       <h1>SWapiBox</h1>
@@ -19,9 +18,13 @@ const Nav = (props) => {
         />
       </nav>
     </header>
-
   );
 };
 
+Nav.propTypes = {
+  renderCategory: PropTypes.func,
+  renderFavorites: PropTypes.func,
+  favorites: PropTypes.array
+};
 
 export default Nav;
