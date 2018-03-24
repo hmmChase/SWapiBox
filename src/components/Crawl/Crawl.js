@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Crawl.css';
 
 const Crawl = (props) => {
-
   return (
     <section className="crawl-container">
       <div className="crawl-content">
@@ -14,5 +14,8 @@ const Crawl = (props) => {
   );
 };
 
+Crawl.propTypes = {
+  randomFilmCrawl: PropTypes.object
+};
 
 export default Crawl;
