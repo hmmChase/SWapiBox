@@ -43,13 +43,13 @@ export async function fetchCategoryData(category) {
         const returnedResidents = await fetchResidents(residentURL);
         return returnedResidents;
       });
-      const resolveResidents = await Promise.all(residentsData)
+      const resolveResidents = await Promise.all(residentsData);
       const planetData = {
         name: result.name,
         terrain: result.terrain,
         population: result.population,
         climate: result.climate,
-        residents: [...resolveResidents]
+        residents: resolveResidents.length ? resolveResidents.join(', ') : 'unknown'
       };
       return planetData;
     });
@@ -90,7 +90,7 @@ async function fetchSpecies(speciesURL) {
 async function fetchResidents(residentsURL) {
   const response = await fetch(residentsURL);
   const data = await response.json();
-  const residentName = data.name
+  const residentName = data.name;
   // console.log(residentObj)
 
   return residentName;

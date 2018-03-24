@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       category: '',
       randomFilmCrawl: {},
-      favorite: [],
+      favorites: [],
       categoryData: []
     };
   }
@@ -37,14 +37,32 @@ class App extends Component {
     });
   }
 
+  renderFavorites = () => {
+    console.log('favorites')
+    this.setState({
+      categoryData: this.state.favorites
+    });
+  }
+
+  addToFavorites = (dataObj) => {
+    this.setState({
+      favorites: [...this.state.favorites, dataObj]
+    });
+  }
+
   render() {
     return (
-      <div>
-        <Header renderCategory={this.renderCategory} />
+      <div className="app">
+        <Header
+          renderCategory={this.renderCategory}
+          renderFavorites={this.renderFavorites}
+          favorites={this.state.favorites}
+        />
         <Main
           category={this.state.category}
           categoryData={this.state.categoryData}
           randomFilmCrawl={this.state.randomFilmCrawl}
+          addToFavorites={this.addToFavorites}
         />
       </div>
     );

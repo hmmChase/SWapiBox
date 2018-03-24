@@ -1,22 +1,25 @@
+*:focus {
+  outline: none;
+}
+
 header {
   padding: 0 50px 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-image: url("../../images/header.jpg"); */
-  background: url(https://lumiere-a.akamaihd.net/v1/images/tlj-header-05_2x_b9458e68.jpeg);
-  background-size: cover;
-  /* color: #fff; */
-}
+  background-image: url(https://thumbs.gfycat.com/IgnorantDimpledHyrax-size_restricted.gif);  
+  height: 100px;
+  border-bottom: 2px solid yellow;
+  }
 
 h1 {
   font-family: 'Audiowide', sans-serif;
   -webkit-text-stroke: 1px yellow;
-  font-weight: ;
 }
 
 nav {
   width: 500px;
   display: flex;
   justify-content: space-around;
+  /* color: #fff; */
 }

@@ -1,0 +1,29 @@
+.crawl-container {
+  display: flex;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-weight: 600;
+  text-align: justify;
+  color: #feda4a;  
+  font-size: 10em;
+  overflow: hidden;
+  perspective: 200px;
+  height: 82vh;
+  letter-spacing: 6px;
+}
+
+.crawl-content {
+  position: relative;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear; 
+}
+
+@keyframes crawl {
+  0% {
+    top: 600px;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
