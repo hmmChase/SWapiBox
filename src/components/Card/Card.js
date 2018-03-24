@@ -6,9 +6,9 @@ const Card = (props) => {
   const dataKeys = Object.keys(props.dataObj);
 
   const dataElements = dataKeys.map((key, index) => {
-    return (
-      <p key={index}>{key}: <span>{props.dataObj[key]}</span></p>
-    );
+    return key === 'name'
+      ? <h2 key={index}>{props.dataObj[key]}</h2>
+      : <p key={index}>{key}: <span>{props.dataObj[key]}</span></p>;
   });
 
   return (

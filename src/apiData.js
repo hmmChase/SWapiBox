@@ -91,8 +91,5 @@ async function fetchResidents(residentsURL) {
   const response = await fetch(residentsURL);
   const data = await response.json();
   const residentName = data.name;
-  // console.log(residentObj)
-
   return residentName;
-  // return await Promise.all(residentObj);
 }
