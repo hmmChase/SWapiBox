@@ -1,4 +1,15 @@
-.favorites {
+button {
   font-family: 'Exo 2', sans-serif;
   font-weight: 600;
+  background: none;
+  border: 2px solid yellow;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+button:hover {
+  background: rgba(164, 164, 0, 0.5);
 }

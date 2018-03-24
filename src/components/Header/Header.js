@@ -13,8 +13,11 @@ const Nav = (props) => {
         <NavButton category="people" renderCategory={props.renderCategory} />
         <NavButton category="planets" renderCategory={props.renderCategory} />
         <NavButton category="vehicles" renderCategory={props.renderCategory} />
+        <Favorites
+          renderFavorites={props.renderFavorites}
+          favorites={props.favorites}
+        />
       </nav>
-      <Favorites />
     </header>
 
   );

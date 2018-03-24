@@ -1,13 +1,15 @@
 import React from 'react';
 import './Favorites.css';
 
-const Favorites = () => {
+const Favorites = (props) => {
 
 
   return (
-    <div className="favorites">
-      Favorites:0
-    </div>
+    <button
+      onClick={() => props.renderFavorites()}
+    >
+      Favorites: <span>{props.favorites.length}</span>
+    </button>
   );
 };
 

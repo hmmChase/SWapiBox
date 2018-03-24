@@ -1,11 +1,16 @@
 import React from 'react';
 import './Crawl.css';
 
-const Crawl = () => {
-
+const Crawl = (props) => {
 
   return (
-    <div></div>
+    <section className="crawl-container">
+      <div className="crawl-content">
+        <p>{props.randomFilmCrawl.crawl}</p>
+        <p>{props.randomFilmCrawl.title}</p>
+        <p>{props.randomFilmCrawl.date}</p>
+      </div>
+    </section>
   );
 };
 

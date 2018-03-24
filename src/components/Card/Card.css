@@ -1,5 +1,29 @@
 article {
   height: 250px;
-  width: 200px;
-  background: lightblue
+  width: 150px;
+  color: white;
+  margin: 10px;
+  border: 2px solid yellow;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+h2 {
+  margin: 8px 0 8px 3px;
+  font-size: .8em;
+  display: inline-block;
+}
+
+img {
+  border-left: 2px solid yellow;
+  border-bottom: 2px solid yellow;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  font-size: .8em;
 }

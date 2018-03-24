@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import Card from '../Card/Card';
+import Card from '../Card/Card';
+import Crawl from '../Crawl/Crawl';
 import './Main.css';
 
 class Main extends Component {
@@ -11,46 +12,51 @@ class Main extends Component {
   }
 
   renderCategories = () => {
-    if (this.props.category === "people") {
-      return this.props.categoryData.map((person, index) => {
-        return (
-          <article key={index}>
-            <p>{person.name}</p>
-            <p>{person.species}</p>
-            <p>{person.homeWorld}</p>
-            <p>{person.population}</p>
-          </article>
-        );
+    return this.props.categoryData.map((dataObj, index) => {
+      // console.log(dataObj)
+      return (
+        <Card
+          key={index}
+          // category={this.props.category}
+          dataObj={dataObj}
+          addToFavorites={this.props.addToFavorites}
+        />
+      );
+    });
 
-      });
-    } else if (this.props.category === "planets") {
-      return this.props.categoryData.map((planet, index) => {
-        return (
-          <article key={index}>
-            <p>{planet.name}</p>
-            <p>{planet.terrain}</p>
-            <p>{planet.population}</p>
-            <p>{planet.climate}</p>
-            {
-              planet.residents.map((resident, index) => {
-                return <p key={index}>{resident}</p>;
-              })
-            }
-          </article>
-        );
-      });
-    } else if (this.props.category === "vehicles") {
-      return this.props.categoryData.map((vehicle, index) => {
-        return (
-          <article key={index}>
-            <p>{vehicle.name}</p>
-            <p>{vehicle.model}</p>
-            <p>{vehicle.class}</p>
-            <p>{vehicle.passengers}</p>
-          </article>
-        );
-      });
-    }
+
+
+    //   if (this.props.category === "people") {
+    //     return this.props.categoryData.map((person, index) => {
+    //       return (
+    //         <Card
+    //           key={index}
+    //           category={this.props.category}
+    //           people={person}
+    //         />
+    //       );
+    //     });
+    //   } else if (this.props.category === "planets") {
+    //     return this.props.categoryData.map((planet, index) => {
+    //       return (
+    //         <Card
+    //           key={index}
+    //           category={this.props.category}
+    //           planets={planet}
+    //         />
+    //       );
+    //     });
+    //   } else if (this.props.category === "vehicles") {
+    //     return this.props.categoryData.map((vehicle, index) => {
+    //       return (
+    //         <Card
+    //           key={index}
+    //           category={this.props.category}
+    //           vehicles={vehicle}
+    //         />
+    //       );
+    //     });
+    //   }
   }
 
   render() {
@@ -58,13 +64,7 @@ class Main extends Component {
       <main>
         {
           !this.props.category ?
-            <section className="film-crawl star-wars">
-              <div className="crawl">
-                <p>{this.props.randomFilmCrawl.crawl}</p>
-                <p>{this.props.randomFilmCrawl.title}</p>
-                <p>{this.props.randomFilmCrawl.date}</p>
-              </div>
-            </section>
+            <Crawl randomFilmCrawl={this.props.randomFilmCrawl} />
             : null
         }
         {

@@ -1,58 +1,7 @@
 main {
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
   justify-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
-  
-
+  background-image: url(http://s3.amazonaws.com/everystockphoto/fspid31/31/20/26/1/tileable-classic-nebula-3120261-o.jpg);
 }
-
-.film-crawl {
-  text-align: center;
-  width: 100%;
-}
-
-.star-wars {
-  display: flex;
-  overflow: hidden;
-  /* justify-content: center; */
-  /* position: relative; */
-  height: 800px;
-  color: #feda4a;
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 500%;
-  font-weight: 600;
-  letter-spacing: 6px;
-  line-height: 150%;
-  perspective: 300px;
-  text-align: justify;
-}
-
-.crawl {
-  position: relative;
-  top: 99999px;
-  transform-origin: 50% 100%;
-  animation: crawl 60s linear;
-}
-
-article {
-  height: 250px;
-  width: 150px;
-  color: white;
-  /* background: lightblue; */
-  margin: 10px;
-  border: 2px solid yellow;
-}
-
-@keyframes crawl {
-  0% {
-    top: -100px;
-    transform: rotateX(20deg) translateZ(0);
-  }
-  100% {
-    top: -6000px;
-    transform: rotateX(25deg) translateZ(-2500px);
-  }
-}
-
