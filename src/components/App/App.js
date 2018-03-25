@@ -43,10 +43,20 @@ class App extends Component {
     });
   }
 
-  addToFavorites = dataObj => {
-    this.setState({
-      favorites: [...this.state.favorites, dataObj]
-    });
+  updateFavorites = dataObj => {
+    const alreadyThere = this.state.favorites.some(
+      favorite => favorite.name === dataObj.name
+    );
+    if (alreadyThere) {
+      const nonDuplicate = this.state.favorites.filter(
+        favorite => favorite.name !== dataObj.name
+      );
+      this.setState({ favorites: nonDuplicate });
+    } else {
+      this.setState({
+        favorites: [...this.state.favorites, dataObj]
+      });
+    }
   }
 
   render() {
@@ -61,7 +71,8 @@ class App extends Component {
           category={this.state.category}
           categoryData={this.state.categoryData}
           randomFilmCrawl={this.state.randomFilmCrawl}
-          addToFavorites={this.addToFavorites}
+          updateFavorites={this.updateFavorites}
+          favorites={this.state.favorites}
         />
       </div>
     );

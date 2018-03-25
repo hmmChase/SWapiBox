@@ -8,16 +8,20 @@ const Main = props => {
 
   const renderCategories = () => {
     return props.categoryData.map((dataObj, index) => {
+
+      const favoriteCardNames = props.favorites.map(favorite => favorite.name);
+      const favoriteCard = favoriteCardNames.includes(dataObj.name);
+
       return (
         <Card
           key={index}
           dataObj={dataObj}
-          addToFavorites={props.addToFavorites}
+          updateFavorites={props.updateFavorites}
+          favoriteCard={favoriteCard}
         />
       );
     });
   };
-
 
   return (
     <main>
@@ -33,8 +37,9 @@ const Main = props => {
 Main.propTypes = {
   category: PropTypes.string,
   categoryData: PropTypes.array,
-  addToFavorites: PropTypes.func,
-  randomFilmCrawl: PropTypes.object
+  updateFavorites: PropTypes.func,
+  randomFilmCrawl: PropTypes.object,
+  favorites: PropTypes.array
 };
 
 export default Main;
