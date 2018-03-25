@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
-import star from '../../images/Death-Star-icon.png';
+import starFav from '../../images/death-star-fav.svg';
+import starUnFav from '../../images/death-star-unfav.svg';
 
 const Card = (props) => {
   const dataKeys = Object.keys(props.dataObj);
+
+  const favoriteIcon = props.favoriteCard
+    ? starFav
+    : starUnFav;
+
   const dataElements = dataKeys.map((key, index) => {
     return key === 'name'
       ? <h2 key={index}>{props.dataObj[key]}</h2>
@@ -14,8 +20,9 @@ const Card = (props) => {
   return (
     <article>
       <img
-        src={star}
-        onClick={() => props.addToFavorites(props.dataObj)}
+        src={favoriteIcon}
+        alt="favorite"
+        onClick={() => props.updateFavorites(props.dataObj)}
       />
       {dataElements}
     </article>
@@ -23,8 +30,9 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
+  favoriteCard: PropTypes.bool,
   dataObj: PropTypes.object,
-  addToFavorites: PropTypes.func
+  updateFavorites: PropTypes.func
 };
 
 export default Card;

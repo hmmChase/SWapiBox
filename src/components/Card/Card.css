@@ -15,8 +15,6 @@ h2 {
 }
 
 img {
-  border-left: 2px solid yellow;
-  border-bottom: 2px solid yellow;
   height: 25px;
   position: absolute;
   right: 0;
