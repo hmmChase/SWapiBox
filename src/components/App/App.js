@@ -28,17 +28,24 @@ class App extends Component {
     this.setState({
       randomFilmCrawl: await fetchFilmCrawl()
     });
+    if (localStorage.favorites) {
+      const localFavorites = JSON.parse(localStorage.getItem('favorites'));
+      this.setState({
+        favorites: localFavorites
+      });
+    }
   }
 
-  renderCategory = async category => {
+  setCategory = async category => {
     this.setState({
       category,
       categoryData: await fetchCategoryData(category)
     });
   }
 
-  renderFavorites = () => {
+  setFavorites = (category) => {
     this.setState({
+      category,
       categoryData: this.state.favorites
     });
   }
@@ -51,11 +58,15 @@ class App extends Component {
       const nonDuplicate = this.state.favorites.filter(
         favorite => favorite.name !== dataObj.name
       );
-      this.setState({ favorites: nonDuplicate });
+      this.setState({ favorites: nonDuplicate },
+        localStorage.setItem('favorites', JSON.stringify(nonDuplicate))
+      );
     } else {
       this.setState({
         favorites: [...this.state.favorites, dataObj]
-      });
+      },
+        localStorage.setItem('favorites', JSON.stringify([...this.state.favorites, dataObj]))
+      );
     }
   }
 
@@ -63,8 +74,8 @@ class App extends Component {
     return (
       <div className="app">
         <Header
-          renderCategory={this.renderCategory}
-          renderFavorites={this.renderFavorites}
+          setCategory={this.setCategory}
+          setFavorites={this.setFavorites}
           favorites={this.state.favorites}
         />
         <Main
