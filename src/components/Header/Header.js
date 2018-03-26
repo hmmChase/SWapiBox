@@ -9,11 +9,12 @@ const Nav = (props) => {
     <header>
       <h1>SWapiBox</h1>
       <nav>
-        <NavButton category="people" renderCategory={props.renderCategory} />
-        <NavButton category="planets" renderCategory={props.renderCategory} />
-        <NavButton category="vehicles" renderCategory={props.renderCategory} />
+        <NavButton category="people" setCategory={props.setCategory} />
+        <NavButton category="planets" setCategory={props.setCategory} />
+        <NavButton category="vehicles" setCategory={props.setCategory} />
         <Favorites
-          renderFavorites={props.renderFavorites}
+          category="favorites"
+          setFavorites={props.setFavorites}
           favorites={props.favorites}
         />
       </nav>
@@ -22,8 +23,8 @@ const Nav = (props) => {
 };
 
 Nav.propTypes = {
-  renderCategory: PropTypes.func,
-  renderFavorites: PropTypes.func,
+  setCategory: PropTypes.func,
+  setFavorites: PropTypes.func,
   favorites: PropTypes.array
 };
 

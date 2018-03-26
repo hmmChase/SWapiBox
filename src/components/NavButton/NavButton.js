@@ -6,7 +6,7 @@ const NavButton = (props) => {
 
   return (
     <button
-      onClick={() => props.renderCategory(props.category)}
+      onClick={() => props.setCategory(props.category)}
     >{props.category}
     </button>
   );
@@ -14,7 +14,7 @@ const NavButton = (props) => {
 
 NavButton.propTypes = {
   category: PropTypes.string,
-  renderCategory: PropTypes.func
+  setCategory: PropTypes.func
 };
 
 

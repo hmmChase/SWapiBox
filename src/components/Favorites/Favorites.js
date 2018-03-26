@@ -4,14 +4,14 @@ import './Favorites.css';
 
 const Favorites = (props) => {
   return (
-    <button onClick={() => props.renderFavorites()}>
+    <button onClick={() => props.setFavorites(props.category)}>
       Favorites: <span>{props.favorites.length}</span>
     </button>
   );
 };
 
 Favorites.propTypes = {
-  renderFavorites: PropTypes.func,
+  setFavorites: PropTypes.func,
   favorites: PropTypes.array
 };
 
