@@ -13,7 +13,7 @@ const NavButton = (props) => {
 };
 
 NavButton.propTypes = {
-  category: PropTypes.string,
+  category: PropTypes.string.isRequired,
   setCategory: PropTypes.func
 };
 

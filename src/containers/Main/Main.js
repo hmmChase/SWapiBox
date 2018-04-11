@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from '../Card/Card';
-import Crawl from '../Crawl/Crawl';
+import Card from '../../components/Card/Card';
+import Crawl from '../../components/Crawl/Crawl';
 import './Main.css';
 
 const Main = props => {
@@ -35,11 +35,11 @@ const Main = props => {
 };
 
 Main.propTypes = {
-  category: PropTypes.string,
-  categoryData: PropTypes.array,
-  updateFavorites: PropTypes.func,
-  randomFilmCrawl: PropTypes.object,
-  favorites: PropTypes.array
+  category: PropTypes.string.isRequired,
+  categoryData: PropTypes.array.isRequired,
+  updateFavorites: PropTypes.func.isRequired,
+  randomFilmCrawl: PropTypes.object.isRequired,
+  favorites: PropTypes.array.isRequired
 };
 
 export default Main;

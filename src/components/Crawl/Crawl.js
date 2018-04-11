@@ -15,7 +15,7 @@ const Crawl = (props) => {
 };
 
 Crawl.propTypes = {
-  randomFilmCrawl: PropTypes.object
+  randomFilmCrawl: PropTypes.object.isRequired
 };
 
 export default Crawl;
