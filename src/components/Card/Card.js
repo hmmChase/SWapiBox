@@ -30,9 +30,9 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  favoriteCard: PropTypes.bool,
-  dataObj: PropTypes.object,
-  updateFavorites: PropTypes.func
+  favoriteCard: PropTypes.bool.isRequired,
+  dataObj: PropTypes.object.isRequired,
+  updateFavorites: PropTypes.func.isRequired
 };
 
 export default Card;

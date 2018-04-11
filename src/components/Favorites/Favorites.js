@@ -11,8 +11,9 @@ const Favorites = (props) => {
 };
 
 Favorites.propTypes = {
-  setFavorites: PropTypes.func,
-  favorites: PropTypes.array
+  category: PropTypes.string.isRequired,
+  setFavorites: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired
 };
 
 export default Favorites;

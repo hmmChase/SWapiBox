@@ -10,8 +10,9 @@ describe('App', () => {
     app = shallow(<App />);
   });
 
-  it('matches the snapshot', () => {
+  it('matches the snapshot', () => {  
     expect(app).toMatchSnapshot();
   });
+  
 
 });

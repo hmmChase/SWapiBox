@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import { fetchFilmCrawl, fetchCategoryData } from '../../apiData';
+import { fetchFilmCrawl } from '../../apiData/filmCrawl';
+import { fetchCategoryData } from '../../apiData/apiData';
 import './App.css';
-
 
 class App extends Component {
   constructor() {
@@ -16,13 +16,6 @@ class App extends Component {
       categoryData: []
     };
   }
-
-  // localstorage
-  // componentDidUpdate
-  // check if state changed
-  // set to localstorage
-  // componentDidMount
-  //  pull from localStorage if available
 
   async componentDidMount() {
     this.setState({
@@ -65,7 +58,7 @@ class App extends Component {
       this.setState({
         favorites: [...this.state.favorites, dataObj]
       },
-        localStorage.setItem('favorites', JSON.stringify([...this.state.favorites, dataObj]))
+      localStorage.setItem('favorites', JSON.stringify([...this.state.favorites, dataObj]))
       );
     }
   }

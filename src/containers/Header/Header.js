@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NavButton from '../NavButton/NavButton';
-import Favorites from '../Favorites/Favorites';
+import NavButton from '../../components/NavButton/NavButton';
+import Favorites from '../../components/Favorites/Favorites';
 import './Header.css';
 
 const Nav = (props) => {
@@ -23,9 +23,9 @@ const Nav = (props) => {
 };
 
 Nav.propTypes = {
-  setCategory: PropTypes.func,
-  setFavorites: PropTypes.func,
-  favorites: PropTypes.array
+  setCategory: PropTypes.func.isRequired,
+  setFavorites: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired
 };
 
 export default Nav;
