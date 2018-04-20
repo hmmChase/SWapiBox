@@ -1,11 +1,11 @@
-import { makeFetch } from './apiData';
+import { makeFetch } from './fetchData';
 
 export async function fetchPlanets(category) {
   const root = 'https://swapi.co/api';
   const planetsData = await makeFetch(`${root}/${category}/`);
   const parsedPlanetsData = planetsData.results.map(async planet => {
-    const residentsData = planet.residents.map(async residentUrl => {
-      return await fetchResidents(residentUrl);
+    const residentsData = planet.residents.map(async residentURL => {
+      return await fetchResidents(residentURL);
     });
     const resolveResidents = await Promise.all(residentsData);
     return {
@@ -21,7 +21,7 @@ export async function fetchPlanets(category) {
   return await Promise.all(parsedPlanetsData);
 }
 
-async function fetchResidents(residentsurl) {
-  const residentData = await makeFetch(residentsurl);
+async function fetchResidents(residentURL) {
+  const residentData = await makeFetch(residentURL);
   return residentData.name;
 }

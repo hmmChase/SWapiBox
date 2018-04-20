@@ -1,4 +1,4 @@
-import { makeFetch } from './apiData';
+import { makeFetch } from './fetchData';
 
 export async function fetchVehicles(category) {
   const root = 'https://swapi.co/api';

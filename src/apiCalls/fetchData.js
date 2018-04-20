@@ -15,9 +15,9 @@ export async function fetchCategoryData(category) {
   }
 }
 
-export async function makeFetch(url) {
+export async function makeFetch(URL) {
   try {
-    const response = await fetch(url);
+    const response = await fetch(URL);
     return await response.json();
   } catch (error) {
     throw new Error(error);

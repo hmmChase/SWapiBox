@@ -1,4 +1,4 @@
-import { makeFetch } from './apiData';
+import { makeFetch } from './fetchData';
 
 export async function fetchPeople(category) {
   const root = 'https://swapi.co/api';
@@ -15,16 +15,16 @@ export async function fetchPeople(category) {
   return await Promise.all(parsedPeapleData);
 }
 
-async function fetchHomeWorld(homeworldurl) {
-  const homeWorldData = await makeFetch(homeworldurl);
+async function fetchHomeWorld(homeworldURL) {
+  const homeWorldData = await makeFetch(homeworldURL);
   return {
     homeWorld: homeWorldData.name,
     population: homeWorldData.population
   };
 }
 
-async function fetchSpecies(speciesurl) {
-  const speciesData = await makeFetch(speciesurl);
+async function fetchSpecies(speciesURL) {
+  const speciesData = await makeFetch(speciesURL);
   return {
     species: speciesData.name
   };

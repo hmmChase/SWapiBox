@@ -1,8 +1,8 @@
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import apiData from './apiData';
+import apiData from './fetchData';
 
-describe('apiData', () => {
+describe('vehicleData', () => {
 
 });
