@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import { fetchFilmCrawl } from '../../apiData/filmCrawl';
-import { fetchCategoryData } from '../../apiData/apiData';
+import { fetchFilmCrawl } from '../../apiCalls/filmCrawl';
+import { fetchCategoryData } from '../../apiCalls/fetchData';
 import './App.css';
 
 class App extends Component {
