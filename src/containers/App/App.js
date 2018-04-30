@@ -17,6 +17,8 @@ class App extends Component {
     };
   }
 
+  
+
   async componentDidMount() {
     this.setState({
       randomFilmCrawl: await fetchFilmCrawl()
