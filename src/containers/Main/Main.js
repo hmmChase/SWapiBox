@@ -5,19 +5,17 @@ import Crawl from '../../components/Crawl/Crawl';
 import './Main.css';
 
 const Main = props => {
-
   const renderCategories = () => {
-    return props.categoryData.map((dataObj, index) => {
-
+    return props.categoryData.map((cardObj, index) => {
       const favoriteCardNames = props.favorites.map(favorite => favorite.name);
-      const favoriteCard = favoriteCardNames.includes(dataObj.name);
+      const favoriteBool = favoriteCardNames.includes(cardObj.name);
 
       return (
         <Card
           key={index}
-          dataObj={dataObj}
+          cardObj={cardObj}
           updateFavorites={props.updateFavorites}
-          favoriteCard={favoriteCard}
+          favoriteBool={favoriteBool}
         />
       );
     });
@@ -25,21 +23,23 @@ const Main = props => {
 
   return (
     <main>
-      {
-        !props.category
-          ? <Crawl randomFilmCrawl={props.randomFilmCrawl} />
-          : renderCategories()
-      }
+      {!props.category ? (
+        <Crawl randomFilmCrawl={props.randomFilmCrawl} />
+      ) : (
+        renderCategories()
+      )}
     </main>
   );
 };
 
+
+
 Main.propTypes = {
-  category: PropTypes.string.isRequired,
-  categoryData: PropTypes.array.isRequired,
-  updateFavorites: PropTypes.func.isRequired,
-  randomFilmCrawl: PropTypes.object.isRequired,
-  favorites: PropTypes.array.isRequired
+  category: PropTypes.string,
+  categoryData: PropTypes.array,
+  updateFavorites: PropTypes.func,
+  randomFilmCrawl: PropTypes.object,
+  favorites: PropTypes.array
 };
 
 export default Main;

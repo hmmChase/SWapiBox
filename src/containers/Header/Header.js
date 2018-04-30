@@ -4,7 +4,7 @@ import NavButton from '../../components/NavButton/NavButton';
 import Favorites from '../../components/Favorites/Favorites';
 import './Header.css';
 
-const Nav = (props) => {
+const Nav = props => {
   return (
     <header>
       <h1>SWapiBox</h1>
@@ -23,9 +23,9 @@ const Nav = (props) => {
 };
 
 Nav.propTypes = {
-  setCategory: PropTypes.func.isRequired,
-  setFavorites: PropTypes.func.isRequired,
-  favorites: PropTypes.array.isRequired
+  setCategory: PropTypes.func,
+  setFavorites: PropTypes.func,
+  favorites: PropTypes.array
 };
 
 export default Nav;

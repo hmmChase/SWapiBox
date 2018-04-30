@@ -1,110 +1,83 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { shallow } from 'enzyme';
 import { fetchCategoryData, makeFetch } from './fetchData';
+import { fetchPeople } from './peopleData';
+jest.mock('./peopleData');
+import { fetchPlanets } from './planetData';
+jest.mock('./planetData');
+import { fetchVehicles } from './vehicleData';
+jest.mock('./vehicleData');
 
-describe('fetchData', () => {
-
-  describe('fetchCategoryData', () => {
-
-    it.skip('calls correct function', () => {
-      // inputs
-      const category = 'people';
-
-      // outputs
-
-
-      // execute
-      fetchCategoryData.instance(category);
-
-
-      // assert
-      expect(fetchCategoryData()).toHaveBeenCalled();
-    });
-
+describe('fetchCategoryData', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
-  describe('makeFetch', () => {
+  it('calls fetchPeople based on people category', () => {
+    const category = 'people';
+    fetchCategoryData(category);
 
-    let mockPeopleData;
-    let mockError;
-    let mockCategory1;
-    let mockCategory2;
-
-    beforeEach(() => {
-
-      mockPeopleData =
-        [
-          {
-            name: 'Luke Skywalker',
-            Homeworld: 'Alderaan',
-            'HomeWorld Population': "2000000000",
-            Species: 'Human'
-          }
-        ];
-
-      mockError = 'error';
-      // mockError = Error(
-      //   'Error fetching houses: Bad response, status code - 500'
-      // );
-
-      mockCategory1 = 'people';
-      mockCategory2 = 'poeple';
-
-
-
-
-
-
-      // window.fetch = jest.fn().mockImplementation((URL) => {
-      //   switch (URL.includes('people')) {
-      //   case true:
-      //     return Promise.resolve({
-      //       ok: true,
-      //       json: () => {
-      //         return Promise.resolve(mockPeopleReturn);
-      //       }
-      //     });
-      //   case false:
-      //     return Promise.resolve({ message: 'error' });
-      //   default:
-      //     return;
-      //   }
-      // });
-
-    });
-
-
-    it('should fetch from the api based on provided URL', async () => {
-
-      window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.resolve({
-          ok: true,
-          json: () => {
-            return Promise.resolve(mockPeopleData);
-          }
-        });
-      });
-
-
-      const data = await makeFetch();
-      expect(data).toEqual(mockPeopleData);
-      // await expect(makeFetch(mockCategory1)).resolves.toEqual(mockPeopleData);
-
-    });
-
-    it('should return an error message if a bad request is sent', async () => {
-
-      window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.reject({
-          ok: false,
-          status: 500
-        });
-      });
-
-      const data = await makeFetch(mockCategory1);
-      expect(data).rejects.toEqual(mockError);
-    });
+    expect(fetchPeople).toHaveBeenCalledTimes(1);
+    expect(fetchPeople).toHaveBeenCalledWith(category);
   });
 
+  it('calls fetchPlanets based on planets category', () => {
+    const category = 'planets';
+    fetchCategoryData(category);
+
+    expect(fetchPlanets).toHaveBeenCalledTimes(1);
+    expect(fetchPlanets).toHaveBeenCalledWith(category);
+  });
+
+  it('calls fetchVehicles based on vehicles category', () => {
+    const category = 'vehicles';
+    fetchCategoryData(category);
+
+    expect(fetchVehicles).toHaveBeenCalledTimes(1);
+    expect(fetchVehicles).toHaveBeenCalledWith(category);
+  });
+
+  it('does nothing if category is invalid', async () => {
+    const category = 'lkjasdf';
+    const invalidCategory = await fetchCategoryData(category);
+
+    expect(invalidCategory).toEqual('invalid category');
+  });
+});
+
+describe('makeFetch', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('returns repsonse data if response.ok is true', async () => {
+    window.fetch = jest.fn().mockImplementation(() => ({
+      status: 200,
+      ok: true,
+      json: () =>
+        new Promise((resolve, reject) => {
+          resolve({ data: 'mock data' });
+        })
+    }));
+
+    await expect(makeFetch()).resolves.toEqual({ data: 'mock data' });
+  });
+
+  it('throws an error if response.ok is false', async () => {
+    window.fetch = jest.fn().mockImplementation(() => ({
+      status: 500,
+      ok: false
+    }));
+    const expected = new Error('Network request failed. (error: 500)');
+
+    await expect(makeFetch()).rejects.toEqual(expected);
+  });
+
+  it('throws an error if fetch fails', async () => {
+    window.fetch = jest
+      .fn()
+      .mockImplementation(() => Promise.reject(new Error('mock error')));
+
+    const expected = new Error('Network request failed. (error: mock error)');
+
+    await expect(makeFetch()).rejects.toEqual(expected);
+  });
 });

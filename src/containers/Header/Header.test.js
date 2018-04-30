@@ -12,5 +12,4 @@ describe('Header', () => {
   it('matches the snapshot', () => {
     expect(header).toMatchSnapshot();
   });
-
 });
