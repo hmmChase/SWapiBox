@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Favorites.css';
 
-const Favorites = (props) => {
+const Favorites = props => {
   return (
     <button onClick={() => props.setFavorites(props.category)}>
       Favorites: <span>{props.favorites.length}</span>
@@ -11,9 +11,9 @@ const Favorites = (props) => {
 };
 
 Favorites.propTypes = {
-  category: PropTypes.string.isRequired,
-  setFavorites: PropTypes.func.isRequired,
-  favorites: PropTypes.array.isRequired
+  category: PropTypes.string,
+  setFavorites: PropTypes.func,
+  favorites: PropTypes.array
 };
 
 export default Favorites;

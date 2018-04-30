@@ -21,6 +21,10 @@ class App extends Component {
     this.setState({
       randomFilmCrawl: await fetchFilmCrawl()
     });
+    this.retrieveFavorites();
+  }
+
+  retrieveFavorites() {
     if (localStorage.favorites) {
       const localFavorites = JSON.parse(localStorage.getItem('favorites'));
       this.setState({
@@ -34,33 +38,42 @@ class App extends Component {
       category,
       categoryData: await fetchCategoryData(category)
     });
-  }
+  };
 
-  setFavorites = (category) => {
+  setFavorites = category => {
     this.setState({
       category,
       categoryData: this.state.favorites
     });
+  };
+
+  updateFavorites = cardObj => {
+    const alreadyFavorite = this.state.favorites.some(
+      favorite => favorite.name === cardObj.name
+    );
+    if (alreadyFavorite) {
+      this.removeFavorite(cardObj);
+    } else {
+      this.addFavorite(cardObj);
+    }
+  };
+
+  removeFavorite(cardObj) {
+    const deletedCardObj = this.state.favorites.filter(
+      favorite => favorite.name !== cardObj.name
+    );
+    localStorage.setItem('favorites', JSON.stringify(deletedCardObj));
+    this.setState({ favorites: deletedCardObj });
   }
 
-  updateFavorites = dataObj => {
-    const alreadyThere = this.state.favorites.some(
-      favorite => favorite.name === dataObj.name
+  addFavorite(cardObj) {
+    localStorage.setItem(
+      'favorites',
+      JSON.stringify([...this.state.favorites, cardObj])
     );
-    if (alreadyThere) {
-      const nonDuplicate = this.state.favorites.filter(
-        favorite => favorite.name !== dataObj.name
-      );
-      this.setState({ favorites: nonDuplicate },
-        localStorage.setItem('favorites', JSON.stringify(nonDuplicate))
-      );
-    } else {
-      this.setState({
-        favorites: [...this.state.favorites, dataObj]
-      },
-      localStorage.setItem('favorites', JSON.stringify([...this.state.favorites, dataObj]))
-      );
-    }
+    this.setState({
+      favorites: [...this.state.favorites, cardObj]
+    });
   }
 
   render() {

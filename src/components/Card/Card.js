@@ -5,16 +5,16 @@ import starFav from '../../images/death-star-fav.svg';
 import starUnFav from '../../images/death-star-unfav.svg';
 
 const Card = (props) => {
-  const dataKeys = Object.keys(props.dataObj);
+  const dataKeys = Object.keys(props.cardObj);
 
-  const favoriteIcon = props.favoriteCard
+  const favoriteIcon = props.favoriteBool
     ? starFav
     : starUnFav;
 
   const dataElements = dataKeys.map((key, index) => {
     return key === 'name'
-      ? <h2 key={index}>{props.dataObj[key]}</h2>
-      : <p key={index}>{key}: <span>{props.dataObj[key]}</span></p>;
+      ? <h2 key={index}>{props.cardObj[key]}</h2>
+      : <p key={index}>{key}: <span>{props.cardObj[key]}</span></p>;
   });
 
   return (
@@ -22,7 +22,7 @@ const Card = (props) => {
       <img
         src={favoriteIcon}
         alt="favorite"
-        onClick={() => props.updateFavorites(props.dataObj)}
+        onClick={() => props.updateFavorites(props.cardObj)}
       />
       {dataElements}
     </article>
@@ -30,9 +30,9 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  favoriteCard: PropTypes.bool.isRequired,
-  dataObj: PropTypes.object.isRequired,
-  updateFavorites: PropTypes.func.isRequired
+  favoriteBool: PropTypes.bool,
+  cardObj: PropTypes.object,
+  updateFavorites: PropTypes.func
 };
 
 export default Card;

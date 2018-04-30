@@ -11,15 +11,18 @@ export async function fetchCategoryData(category) {
   case 'vehicles':
     return fetchVehicles(category);
   default:
-    break;
+    return 'invalid category';
   }
 }
 
-export async function makeFetch(URL) {
+export async function makeFetch(url) {
   try {
-    const response = await fetch(URL);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`${response.status}`);
+    }
     return await response.json();
   } catch (error) {
-    throw new Error(error);
+    throw new Error(`Network request failed. (error: ${error.message})`);
   }
 }
