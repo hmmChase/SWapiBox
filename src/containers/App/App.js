@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Header from '../Header/Header';
 import CardContainer from '../CardContainer/CardContainer';
@@ -11,14 +12,14 @@ class App extends Component {
     this.state = {};
   }
 
+
   componentDidMount = async () => {};
 
   render() {
     return (
       <main className="App">
         <Header />
-        {/* <CardContainer /> */}
-        <FilmCrawl />
+        <Route exact path='/' component={FilmCrawl} />
       </main>
     );
   }
