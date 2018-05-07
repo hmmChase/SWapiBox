@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from '../Header/Header';
+import CardContainer from '../CardContainer/CardContainer';
+import FilmCrawl from '../../components/FilmCrawl/FilmCrawl';
 
 class App extends Component {
   constructor() {
@@ -8,8 +11,16 @@ class App extends Component {
     this.state = {};
   }
 
+  componentDidMount = async () => {};
+
   render() {
-    return <div className="App">SWapi Box</div>;
+    return (
+      <main className="App">
+        <Header />
+        {/* <CardContainer /> */}
+        <FilmCrawl />
+      </main>
+    );
   }
 }
 
