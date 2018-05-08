@@ -7,7 +7,7 @@ const Header = () => {
     <section className="Header">
       <NavLink to='/people'>People</NavLink>
       <NavLink to='/planets'>Planets</NavLink>
-      <NavLink to='/vehicles'>Planets</NavLink>
+      <NavLink to='/vehicles'>Vehicles</NavLink>
     </section>
   );
 };
