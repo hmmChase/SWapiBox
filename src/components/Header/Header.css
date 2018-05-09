@@ -1,0 +1,29 @@
+.Header {
+  display: flex;
+  justify-content: center;
+  /* justify-items: center; */
+  /* align-content: space-between; */
+  align-items: center;
+}
+
+.categories {
+  margin: 0 2em 0 2em;
+}
+
+.navlink {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  background: none;
+  border: 2px solid yellow;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  margin: 0.5em;
+}
+
+.navlink:hover {
+  background: rgba(164, 164, 0, 0.5);
+}
