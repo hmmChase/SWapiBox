@@ -10,21 +10,21 @@ const Header = ({ setCategory }) => {
         <NavLink
           className="navlink"
           to="/people"
-          onClick={() => setCategory('people')}
+          // onClick={() => setCategory('people')}
         >
           People
         </NavLink>
         <NavLink
           className="navlink"
           to="/planets"
-          onClick={() => setCategory('planets')}
+          // onClick={() => setCategory('planets')}
         >
           Planets
         </NavLink>
         <NavLink
           className="navlink"
           to="/vehicles"
-          onClick={() => setCategory('vehicles')}
+          // onClick={() => setCategory('vehicles')}
         >
           Vehicles
         </NavLink>
