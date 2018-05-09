@@ -9,17 +9,24 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      category: ''
+    };
   }
 
+  setCategory = category => {
+    this.setState({
+      category
+    });
+  };
 
   componentDidMount = async () => {};
 
   render() {
     return (
       <main className="App">
-        <Header />
-        <Route exact path='/' component={FilmCrawl} />
+        <Header setCategory={this.setCategory} />
+        <Route exact path="/" component={FilmCrawl} />
       </main>
     );
   }
