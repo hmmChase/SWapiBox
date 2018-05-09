@@ -8,24 +8,21 @@ describe('doFetch', () => {
   it('matches snapshot', () => {
     expect(doFetch).toMatchSnapshot();
   });
-
+  
   it('calls fetch', async () => {
-    // why is fetch called twice
+    const url = 'https://swapi.co/api';
 
     window.fetch = jest.fn().mockImplementation(() => ({
       status: 200,
       ok: true,
       json: () =>
         new Promise((resolve, reject) => {
-          resolve({ data: 'mock response data' });
+          resolve({ response: 'mock response data' });
         })
     }));
-    expect(doFetch()).resolves.toEqual({ data: 'mock response data' });
-
-    const url = 'https://swapi.co/api';
 
     await doFetch(url);
-    // expect(fetch).toHaveBeenCalledTimes(1);
+    expect(fetch).toHaveBeenCalledTimes(1);
     expect(fetch).toHaveBeenCalledWith(url);
   });
 
@@ -35,11 +32,11 @@ describe('doFetch', () => {
       ok: true,
       json: () =>
         new Promise((resolve, reject) => {
-          resolve({ data: 'mock data' });
+          resolve({ response: 'mock data' });
         })
     }));
 
-    await expect(doFetch()).resolves.toEqual({ data: 'mock data' });
+    await expect(doFetch()).resolves.toEqual({ response: 'mock data' });
   });
 
   it('throws an error if response.ok is false', async () => {
@@ -64,11 +61,3 @@ describe('doFetch', () => {
     await expect(doFetch()).rejects.toEqual(expected);
   });
 });
-
-// // reject
-// window.fetch = jest.fn().mockImplementation(() => ({
-//   status: 500,
-//   ok: false
-// }));
-// const expected = new Error('Network request failed. (error: 500)');
-// expect(doFetch()).rejects.toEqual(expected);
