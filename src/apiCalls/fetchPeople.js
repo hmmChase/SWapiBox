@@ -5,8 +5,6 @@ export const fetchPeople = async () => {
     const root = 'https://swapi.co/api';
     const peopleData = await doFetch(`${root}/people`);
     const parsedPeopleData = peopleData.results.map(async person => {
-      console.log(person);
-
       const homeWorldData = await fetchHomeWorld(person.homeworld);
       const speciesData = await fetchSpecies(person.species);
       return {
