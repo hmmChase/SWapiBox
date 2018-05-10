@@ -7,34 +7,18 @@ const Header = ({ setCategory }) => {
     <section className="Header">
       <h1>SWapiBox</h1>
       <div className="categories">
-        <NavLink
-          className="navlink"
-          to="/people"
-          // onClick={() => setCategory('people')}
-        >
+        <NavLink className="navlink" to="/people">
           People
         </NavLink>
-        <NavLink
-          className="navlink"
-          to="/planets"
-          // onClick={() => setCategory('planets')}
-        >
+        <NavLink className="navlink" to="/planets">
           Planets
         </NavLink>
-        <NavLink
-          className="navlink"
-          to="/vehicles"
-          // onClick={() => setCategory('vehicles')}
-        >
+        <NavLink className="navlink" to="/vehicles">
           Vehicles
         </NavLink>
       </div>
 
-      <NavLink
-        className="navlink"
-        to="/favorites"
-        onClick={() => setCategory('favorites')}
-      >
+      <NavLink className="navlink" to="/favorites">
         Favorites
       </NavLink>
     </section>
