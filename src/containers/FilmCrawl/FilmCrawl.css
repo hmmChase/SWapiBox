@@ -1,0 +1,53 @@
+.scrolling-text {
+  display: flex;
+  justify-content: center;
+  color: orange;
+  font-size: 10rem;
+  height: 80%;
+  overflow: hidden;
+  perspective: 300px;
+  width: 100vw;
+}
+
+.crawl-container {
+  display: flex;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-weight: 600;
+  /* text-align: justify; */
+  color: #feda4a;  
+  font-size: 3em;
+  overflow: hidden;
+  perspective: 200px;
+  height: 82vh;
+  width: 100vw;
+  letter-spacing: 6px;
+}
+
+.crawl {
+  position: relative;
+  top: -1000px;
+  transform-origin: 50% 100%;
+  animation: crawl 90s linear;
+  visibility: hidden;
+}
+
+
+.crawl-content {
+  position: relative;
+  top: -1000px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear; 
+  visibility: hidden;
+}
+
+@keyframes crawl {
+  0% {
+    top: 1000px;
+    transform: rotateX(20deg) translateZ(0);
+    visibility: visible;
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2000px);
+  }
+}
