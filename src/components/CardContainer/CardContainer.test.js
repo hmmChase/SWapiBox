@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import CardContainer from './CardContainer';
 import { fetchPeople } from '../../apiCalls/fetchPeople';
 jest.mock('../../apiCalls/fetchPeople.js');
@@ -39,15 +39,13 @@ describe('CardContainer', () => {
   });
   describe('getCategoryData', () => {
     it('if people data not loaded, calls fetchPeople based on people category', async () => {
-      const category = 'people';
       await cardContainer.instance().getCategoryData('people');
 
       await expect(fetchPeople).toHaveBeenCalledTimes(1);
     });
 
     it('if planets data not loaded, calls fetchPlanets based on planets category', async () => {
-      const category = 'planets';
-      await cardContainer.instance().getCategoryData(category);
+      await cardContainer.instance().getCategoryData('planets');
 
       await expect(fetchPlanets).toHaveBeenCalledTimes(1);
     });
@@ -55,7 +53,6 @@ describe('CardContainer', () => {
     it('if vehicles data not loaded, calls fetchVehicles based on vehicles category', async () => {
       console.log(cardContainer.state());
 
-      const category = 'vehicles';
       await cardContainer.instance().getCategoryData('vehicles');
 
       await expect(fetchVehicles).toHaveBeenCalledTimes(1);

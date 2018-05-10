@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchFilmCrawl } from '../../apiCalls/fetchFilmCrawl';
+import "./FilmCrawl.css";
 
 class FilmCrawl extends Component {
   constructor() {
@@ -32,11 +33,13 @@ class FilmCrawl extends Component {
     }
     if (filmCrawl) {
       return (
-        <div>
-          <p>{this.state.filmCrawl.crawl}</p>
-          <p>{this.state.filmCrawl.title}</p>
-          <p>{this.state.filmCrawl.date}</p>
-        </div>
+        <section className="crawl-container">
+          <div className="crawl-content">
+            <p>{this.state.filmCrawl.crawl}</p>
+            <p>{this.state.filmCrawl.title}</p>
+            <p>{this.state.filmCrawl.date}</p>
+          </div>
+        </section>
       );
     }
     return <p>...loading</p>;
