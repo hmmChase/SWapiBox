@@ -1,8 +1,4 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
-import apiData from './fetchData';
-import { fetchPlanets } from "./planetData";
+import { fetchPlanets } from "../fetchPlanets";
 
 describe('planetData', () => {
 

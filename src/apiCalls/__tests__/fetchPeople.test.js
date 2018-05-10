@@ -1,9 +1,8 @@
-// import { fetchPeople, fetchHomeWorld, fetchSpecies } from './peopleData';
-import * as fetchPeople from './fetchPeople';
+import { fetchPeople, fetchHomeWorld, fetchSpecies } from '../fetchPeople';
 import { doFetch } from '../doFetch';
-jest.mock('./doFetch.js');
+jest.mock('../doFetch.js');
 
-import * as mockData from '../__mocks__/mockData';
+import * as mockData from '../../__mocks__/mockData';
 
 const mockCleanHomeWorldData = {
   homeWorld: mockData.fetchedHomeWorldData.name,
@@ -22,32 +21,32 @@ const mockCleanPeopleData = {
 
 describe('peopleData', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    jest.resetAllMocks();
   });
 
   describe('fetchPeople', () => {
-    it('calls makeFetch', async () => {
-      makeFetch.mockImplementation(() => mockData.fetchedPeopleData);
+    it('calls doFetch', async () => {
+      doFetch.mockImplementation(() => mockData.fetchedPeopleData);
       await fetchPeople();
 
-      expect(makeFetch).toHaveBeenCalled();
+      expect(doFetch).toHaveBeenCalled();
     });
 
-    it.only('returns people data', async () => {
-      makeFetch.mockImplementation(() => mockData.fetchedPeopleData);
-      console.log(makeFetch());
+    it('returns people data', async () => {
+      doFetch.mockImplementation(() => mockData.fetchedPeopleData);
+      console.log(doFetch());
 
-      peopleData.fetchHomeWorld = jest
+      fetchHomeWorld = jest
         .fn()
         .mockImplementation(() => mockCleanHomeWorldData);
-      console.log(peopleData.fetchHomeWorld());
+      console.log(fetchHomeWorld());
 
-      peopleData.fetchSpecies = await jest
+      fetchSpecies = await jest
         .fn()
         .mockImplementation(() => mockCleanSpeciesData);
-      console.log(peopleData.fetchSpecies());
+      console.log(fetchSpecies());
 
-      const people = await peopleData.fetchPeople();
+      const people = await fetchPeople();
 
       console.log(await people);
 
@@ -58,28 +57,28 @@ describe('peopleData', () => {
   });
 
   describe('fetchHomeWorld', () => {
-    it('calls makeFetch', async () => {
+    it('calls doFetch', async () => {
       await fetchHomeWorld();
 
-      expect(makeFetch).toHaveBeenCalled();
+      expect(doFetch).toHaveBeenCalled();
     });
 
     it('returns HomeWorld data', async () => {
-      makeFetch.mockImplementation(() => mockData.fetchedHomeWorldData);
+      doFetch.mockImplementation(() => mockData.fetchedHomeWorldData);
 
       expect(await fetchHomeWorld()).toEqual(mockCleanHomeWorldData);
     });
   });
 
   describe('fetchSpecies', () => {
-    it('calls makeFetch', async () => {
+    it('calls doFetch', async () => {
       await fetchSpecies();
 
-      expect(makeFetch).toHaveBeenCalled();
+      expect(doFetch).toHaveBeenCalled();
     });
 
     it('returns Species data', async () => {
-      await makeFetch.mockImplementation(() => mockData.fetchedSpeciesData);
+      await doFetch.mockImplementation(() => mockData.fetchedSpeciesData);
 
       await expect(await fetchSpecies()).toEqual(mockCleanSpeciesData);
     });
