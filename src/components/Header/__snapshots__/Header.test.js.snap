@@ -18,26 +18,44 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <h1>
+          SWapiBox
+</h1>,
+        <div
+          className="categories"
+>
+          <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="navlink"
+                    to="/people"
+          >
+                    People
+          </NavLink>
+          <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="navlink"
+                    to="/planets"
+          >
+                    Planets
+          </NavLink>
+          <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="navlink"
+                    to="/vehicles"
+          >
+                    Vehicles
+          </NavLink>
+</div>,
         <NavLink
           activeClassName="active"
           ariaCurrent="true"
-          to="/people"
+          className="navlink"
+          to="/favorites"
 >
-          People
-</NavLink>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          to="/planets"
->
-          Planets
-</NavLink>,
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          to="/vehicles"
->
-          Vehicles
+          Favorites
 </NavLink>,
       ],
       "className": "Header",
@@ -47,16 +65,96 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "People",
-          "to": "/people",
+          "children": "SWapiBox",
         },
         "ref": null,
-        "rendered": "People",
-        "type": [Function],
+        "rendered": "SWapiBox",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="navlink"
+              to="/people"
+>
+              People
+</NavLink>,
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="navlink"
+              to="/planets"
+>
+              Planets
+</NavLink>,
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="navlink"
+              to="/vehicles"
+>
+              Vehicles
+</NavLink>,
+          ],
+          "className": "categories",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "People",
+              "className": "navlink",
+              "to": "/people",
+            },
+            "ref": null,
+            "rendered": "People",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "Planets",
+              "className": "navlink",
+              "to": "/planets",
+            },
+            "ref": null,
+            "rendered": "Planets",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "Vehicles",
+              "className": "navlink",
+              "to": "/vehicles",
+            },
+            "ref": null,
+            "rendered": "Vehicles",
+            "type": [Function],
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -65,25 +163,12 @@ ShallowWrapper {
         "props": Object {
           "activeClassName": "active",
           "ariaCurrent": "true",
-          "children": "Planets",
-          "to": "/planets",
+          "children": "Favorites",
+          "className": "navlink",
+          "to": "/favorites",
         },
         "ref": null,
-        "rendered": "Planets",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Vehicles",
-          "to": "/vehicles",
-        },
-        "ref": null,
-        "rendered": "Vehicles",
+        "rendered": "Favorites",
         "type": [Function],
       },
     ],
@@ -96,26 +181,44 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <h1>
+            SWapiBox
+</h1>,
+          <div
+            className="categories"
+>
+            <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        className="navlink"
+                        to="/people"
+            >
+                        People
+            </NavLink>
+            <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        className="navlink"
+                        to="/planets"
+            >
+                        Planets
+            </NavLink>
+            <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        className="navlink"
+                        to="/vehicles"
+            >
+                        Vehicles
+            </NavLink>
+</div>,
           <NavLink
             activeClassName="active"
             ariaCurrent="true"
-            to="/people"
+            className="navlink"
+            to="/favorites"
 >
-            People
-</NavLink>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            to="/planets"
->
-            Planets
-</NavLink>,
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            to="/vehicles"
->
-            Vehicles
+            Favorites
 </NavLink>,
         ],
         "className": "Header",
@@ -125,16 +228,96 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "People",
-            "to": "/people",
+            "children": "SWapiBox",
           },
           "ref": null,
-          "rendered": "People",
-          "type": [Function],
+          "rendered": "SWapiBox",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                className="navlink"
+                to="/people"
+>
+                People
+</NavLink>,
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                className="navlink"
+                to="/planets"
+>
+                Planets
+</NavLink>,
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                className="navlink"
+                to="/vehicles"
+>
+                Vehicles
+</NavLink>,
+            ],
+            "className": "categories",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "People",
+                "className": "navlink",
+                "to": "/people",
+              },
+              "ref": null,
+              "rendered": "People",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Planets",
+                "className": "navlink",
+                "to": "/planets",
+              },
+              "ref": null,
+              "rendered": "Planets",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Vehicles",
+                "className": "navlink",
+                "to": "/vehicles",
+              },
+              "ref": null,
+              "rendered": "Vehicles",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -143,25 +326,12 @@ ShallowWrapper {
           "props": Object {
             "activeClassName": "active",
             "ariaCurrent": "true",
-            "children": "Planets",
-            "to": "/planets",
+            "children": "Favorites",
+            "className": "navlink",
+            "to": "/favorites",
           },
           "ref": null,
-          "rendered": "Planets",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Vehicles",
-            "to": "/vehicles",
-          },
-          "ref": null,
-          "rendered": "Vehicles",
+          "rendered": "Favorites",
           "type": [Function],
         },
       ],

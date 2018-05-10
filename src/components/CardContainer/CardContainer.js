@@ -8,67 +8,51 @@ import { fetchVehicles } from '../../apiCalls/fetchVehicles';
 class CardContainer extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      path: '',
+      category: this.props.match.path.slice(1),
       people: [],
       planets: [],
       vehicles: [],
       favorites: []
     };
   }
-  // console.log(match.path);
 
   async componentDidMount() {
-    this.setState(
-      {
-        path: this.props.match.path
-      },
-      () => this.fetchCategory(this.state.path)
-    );
+    await this.getCategoryData(this.state.category);
   }
 
-  // fetchCategory = async category => {
-  //   switch (category) {
-  //     case '/people':
-  //       if (this.state.people.length === 0) {
-  //         const categoryData = await fetchPeople(category);
-  //         await this.setState({
-  //           people: categoryData
-  //         });
-  //       }
-  //       break;
-  //     case '/planets':
-  //       if (this.state.planets.length === 0) {
-  //         const categoryData = await fetchPlanets(category);
-  //         this.setState({
-  //           planets: categoryData
-  //         });
-  //       }
-  //       break;
-  //     case '/vehicles':
-  //       if (this.state.vehicles.length === 0) {
-  //         const categoryData = await fetchVehicles(category);
-  //         this.setState({
-  //           vehicles: categoryData
-  //         });
-  //       }
-  //       break;
-  //     // case 'favorites':
-  //     //   return await fetchFavorites(category);
-  //     default:
-  //       break;
-  //   }
-  // };
+  getCategoryData = async category => {
+    if (this.state[category].length === 0) {
+      switch (category) {
+        case 'people':
+          const people = await fetchPeople();
+          this.setState({ people });
+          break;
+        case 'planets':
+          const planets = await fetchPlanets();
+          this.setState({ planets });
+          break;
+        case 'vehicles':
+          const vehicles = await fetchVehicles();
+          this.setState({ vehicles });
+          break;
+        default:
+          break;
+      }
+    }
+  };
 
-  dataCards = () => {
-    this.state['path'].map((dataObj, index) => {
-      return <Card key={'card' + index} dataObj={dataObj} />;
-    });
+  renderCards = () => {
+    if (this.state[this.state.category].length > 0) {
+      return this.state[this.state.category].map((dataObj, index) => {
+        return <Card key={'card' + index} dataObj={dataObj} />;
+      });
+    }
+    return <p>...loading</p>;
   };
 
   render() {
-    return <section className="Card-container" />;
+    return <section className="Card-container">{this.renderCards()}</section>;
   }
 }
 
