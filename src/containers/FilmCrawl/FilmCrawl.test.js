@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import FilmCrawl from './FilmCrawl';
 import { fetchFilmCrawl } from '../../apiCalls/fetchFilmCrawl';
 jest.mock('../../apiCalls/fetchFilmCrawl.js');

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({ setCategory }) => {
+const Header = () => {
   return (
     <section className="Header">
       <h1>SWapiBox</h1>
@@ -20,6 +20,7 @@ const Header = ({ setCategory }) => {
 
       <NavLink className="navlink" to="/favorites">
         Favorites
+        {/* <span>{props.favorites}</span> */}
       </NavLink>
     </section>
   );
