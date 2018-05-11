@@ -162,17 +162,23 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div>
-        <p>
-                There is unrest in the Galactic Senate...
-        </p>
-        <p>
-                Attack of the Clones
-        </p>
-        <p>
-                2002-05-16
-        </p>
-</div>,
+      "children": <section
+        className="crawl-container"
+>
+        <div
+                className="crawl-content"
+        >
+                <p>
+                        There is unrest in the Galactic Senate...
+                </p>
+                <p>
+                        Attack of the Clones
+                </p>
+                <p>
+                        2002-05-16
+                </p>
+        </div>
+</section>,
       "className": "crawl-container",
     },
     "ref": null,
@@ -181,65 +187,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <p>
-            There is unrest in the Galactic Senate...
-</p>,
-          <p>
-            Attack of the Clones
-</p>,
-          <p>
-            2002-05-16
-</p>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "There is unrest in the Galactic Senate...",
-          },
-          "ref": null,
-          "rendered": "There is unrest in the Galactic Senate...",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Attack of the Clones",
-          },
-          "ref": null,
-          "rendered": "Attack of the Clones",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "2002-05-16",
-          },
-          "ref": null,
-          "rendered": "2002-05-16",
-          "type": "p",
-        },
-      ],
-      "type": "div",
-    },
-    "type": "section",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div>
+        "children": <div
+          className="crawl-content"
+>
           <p>
                     There is unrest in the Galactic Senate...
           </p>
@@ -269,6 +219,7 @@ ShallowWrapper {
               2002-05-16
 </p>,
           ],
+          "className": "crawl-content",
         },
         "ref": null,
         "rendered": Array [
@@ -307,6 +258,115 @@ ShallowWrapper {
           },
         ],
         "type": "div",
+      },
+      "type": "section",
+    },
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <section
+          className="crawl-container"
+>
+          <div
+                    className="crawl-content"
+          >
+                    <p>
+                              There is unrest in the Galactic Senate...
+                    </p>
+                    <p>
+                              Attack of the Clones
+                    </p>
+                    <p>
+                              2002-05-16
+                    </p>
+          </div>
+</section>,
+        "className": "crawl-container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="crawl-content"
+>
+            <p>
+                        There is unrest in the Galactic Senate...
+            </p>
+            <p>
+                        Attack of the Clones
+            </p>
+            <p>
+                        2002-05-16
+            </p>
+</div>,
+          "className": "crawl-container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                There is unrest in the Galactic Senate...
+</p>,
+              <p>
+                Attack of the Clones
+</p>,
+              <p>
+                2002-05-16
+</p>,
+            ],
+            "className": "crawl-content",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "There is unrest in the Galactic Senate...",
+              },
+              "ref": null,
+              "rendered": "There is unrest in the Galactic Senate...",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Attack of the Clones",
+              },
+              "ref": null,
+              "rendered": "Attack of the Clones",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "2002-05-16",
+              },
+              "ref": null,
+              "rendered": "2002-05-16",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "section",
       },
       "type": "section",
     },
