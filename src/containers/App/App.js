@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../../components/Header/Header';
 import CardContainer from '../../components/CardContainer/CardContainer';
@@ -14,10 +14,18 @@ class App extends Component {
 
   componentDidMount = () => {};
 
+  // setFavorites = category => {
+  //   this.setState({
+  //     category,
+  //     categoryData: this.state.favorites
+  //   });
+  // };
+
   render() {
     return (
       <main className="App">
-        <Header setCategory={this.setCategory} />
+        <Header />
+        {/* <Switch> */}
         <Route exact path="/" component={FilmCrawl} />
         <Route
           path="/people"
@@ -35,6 +43,7 @@ class App extends Component {
           path="/favorites"
           render={({ match }) => <CardContainer match={match} />}
         />
+        {/* </Switch> */}
       </main>
     );
   }
