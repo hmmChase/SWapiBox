@@ -21,21 +21,21 @@ describe('fetchFilmCrawl', () => {
     };
   });
 
-  it('matches snapshot', () => {
-    expect(fetchFilmCrawl).toMatchSnapshot();
+  it('matches snapshot', async () => {
+    await expect(fetchFilmCrawl).toMatchSnapshot();
   });
 
   it('calls doFetch', async () => {
-    doFetch.mockImplementation(() => mockFetchedFilmData);
+    doFetch.mockImplementation(() => Promise.resolve(mockFetchedFilmData));
     await fetchFilmCrawl();
 
-    expect(doFetch).toHaveBeenCalledTimes(1);
+    await expect(doFetch).toHaveBeenCalledTimes(1);
   });
 
-  it('returns film crawl data if doFetch successful', async () => {
-    doFetch.mockImplementation(() => mockFetchedFilmData);
+  it('returns film crawl data and cleans it, if doFetch is successful', async () => {
+    doFetch.mockImplementation(() => Promise.resolve(mockFetchedFilmData));
 
-    expect(await fetchFilmCrawl()).toEqual(mockCleanFilmData);
+    await expect(fetchFilmCrawl()).resolves.toEqual(mockCleanFilmData);
   });
 
   it('throws an error if doFetch fails', async () => {

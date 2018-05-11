@@ -4,6 +4,7 @@ export const fetchPlanets = async () => {
   try {
     const root = 'https://swapi.co/api';
     const planetsData = await doFetch(`${root}/planets`);
+    // console.log(JSON.stringify(await doFetch(`${root}/planets`)))
     const parsedPlanetsData = planetsData.results.map(async planet => {
       const residentsData = planet.residents.map(async residentURL => {
         return await fetchResidents(residentURL);
