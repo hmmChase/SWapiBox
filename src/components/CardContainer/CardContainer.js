@@ -23,26 +23,26 @@ class CardContainer extends Component {
   }
 
   getCategoryData = async category => {
-    // console.log('category:', category);
-    // console.log('in code: ', this.state);
+    console.log('category:', category);
+    console.log('in code: ', this.state);
     if (this.state[category].length === 0) {
-      // console.log('after if conditon');
+      console.log('after if conditon');
       switch (category) {
         case 'people':
-          // console.log('people case');
+          console.log('people case');
           this.setState({ people: await fetchPeople() });
           break;
 
         case 'planets':
-          // console.log('planets case');
+          console.log('planets case');
           this.setState({ planets: await fetchPlanets() });
           break;
 
         case 'vehicles':
-          // console.log('after vehicles case');
-          // console.log('after vehicles func');
+          console.log('after vehicles case');
+          console.log('after vehicles func');
           this.setState({ vehicles: await fetchVehicles() });
-          // console.log('after vehicles setState');
+          console.log('after vehicles setState');
           break;
         default:
           break;
@@ -91,6 +91,7 @@ class CardContainer extends Component {
   renderCards = () => {
     if (this.state[this.state.category].length > 0) {
       return this.state[this.state.category].map((dataObj, index) => {
+        
         const favoriteCardNames = this.state.favorites.map(
           favorite => favorite.name
         );
