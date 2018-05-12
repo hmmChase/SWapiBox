@@ -7,7 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <CardContainer
     match={
         Object {
-            "path": "/vehicles",
+            "path": "/planets",
           }
     }
 />,

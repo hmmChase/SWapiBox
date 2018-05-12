@@ -13,7 +13,7 @@ describe('CardContainer', () => {
   let mockProps;
   let cardContainer;
   beforeEach(() => {
-    jest.resetAllMocks();
+    // jest.resetAllMocks();
     mockProps = {
       match: { path: '/people' }
     };
@@ -39,9 +39,20 @@ describe('CardContainer', () => {
     });
   });
 
-  describe('getCategoryData', () => {
-    it('if people data not loaded, calls fetchPeople based on people category', async () => {
+  describe.only('getCategoryData', () => {
+    let cardContainer;
+    beforeEach(() => {
+      cardContainer = shallow(<CardContainer {...mockProps} />, {
+        disableLifecycleMethods: true
+      });
+    });
+
+    it.only('if people data not loaded, calls fetchPeople based on people category', async () => {
+      console.log(cardContainer.state());
+
       await cardContainer.instance().getCategoryData('people');
+      
+      console.log(cardContainer.state());
 
       await expect(fetchPeople).toHaveBeenCalledTimes(1);
     });
@@ -52,7 +63,7 @@ describe('CardContainer', () => {
       await expect(fetchPlanets).toHaveBeenCalledTimes(1);
     });
 
-    it.only('if vehicles data not loaded, calls fetchVehicles based on vehicles category', async () => {
+    it('if vehicles data not loaded, calls fetchVehicles based on vehicles category', async () => {
       // console.log('before', cardContainer.state());
 
       // cardContainer = mount(<CardContainer {...mockProps} />);
@@ -61,7 +72,7 @@ describe('CardContainer', () => {
 
       // console.log(cardContainer.debug());
 
-      console.log('after', cardContainer.state());
+      // console.log('after', cardContainer.state());
 
       await expect(fetchVehicles).toHaveBeenCalledTimes(1);
     });
