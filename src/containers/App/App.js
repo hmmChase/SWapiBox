@@ -14,6 +14,10 @@ class App extends Component {
 
   componentDidMount = () => {};
 
+  numFavorites = () => {
+    
+  }
+
   // setFavorites = category => {
   //   this.setState({
   //     category,

@@ -20,7 +20,7 @@ const Header = () => {
 
       <NavLink className="navlink" to="/favorites">
         Favorites
-        {/* <span>{props.favorites}</span> */}
+        {/* <span>{props.numFavorites}</span> */}
       </NavLink>
     </section>
   );
