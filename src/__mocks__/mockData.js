@@ -287,3 +287,23 @@ export const cleanVehicleData = [
     passengers: '30'
   }
 ];
+
+export const mockCleanHomeWorldData = {
+  homeWorld: 'Tatooine',
+  population: '200000'
+};
+
+export const mockCleanSpeciesData = {
+  species: 'Human'
+};
+
+export const mockCleanPeopleData = [
+  {
+    name: 'C-3PO',
+    homeWorld: 'Tatooine',
+    population: '200000',
+    species: 'Human'
+    // ...mockCleanHomeWorldData,
+    // ...mockCleanSpeciesData
+  }
+];
