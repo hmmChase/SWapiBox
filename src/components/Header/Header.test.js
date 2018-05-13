@@ -4,8 +4,12 @@ import Header from './Header';
 
 describe('Header', () => {
   let header;
+  let mockProps;
   beforeEach(() => {
-    header = shallow(<Header />);
+    mockProps = {
+      numFavs: 2
+    };
+    header = shallow(<Header {...mockProps} />);
   });
 
   it('matches snapshot', () => {

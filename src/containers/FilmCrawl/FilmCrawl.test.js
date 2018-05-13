@@ -3,25 +3,20 @@ import { shallow } from 'enzyme';
 import FilmCrawl from './FilmCrawl';
 import { fetchFilmCrawl } from '../../apiCalls/fetchFilmCrawl';
 jest.mock('../../apiCalls/fetchFilmCrawl.js');
+import * as mockData from '../../__mocks__/mockData';
 
 describe('FilmCrawl', () => {
   let filmCrawl;
-  let mockFilmCrawlData;
 
   beforeEach(() => {
     jest.resetAllMocks();
-    mockFilmCrawlData = {
-      crawl: 'There is unrest in the Galactic Senate...',
-      date: '2002-05-16',
-      title: 'Attack of the Clones'
-    };
 
     filmCrawl = shallow(<FilmCrawl />, { disableLifecycleMethods: true });
   });
 
   it('matches snapshot with filmCrawl data fetched', () => {
     filmCrawl.setState({
-      filmCrawl: mockFilmCrawlData
+      filmCrawl: mockData.cleanFilmData
     });
 
     expect(filmCrawl).toMatchSnapshot();
@@ -63,10 +58,10 @@ describe('FilmCrawl', () => {
     });
 
     it('sets state.filmCrawl with fetched film crawl data,', async () => {
-      fetchFilmCrawl.mockImplementation(() => mockFilmCrawlData);
+      fetchFilmCrawl.mockImplementation(() => mockData.cleanFilmData);
       await filmCrawl.instance().setFilmCrawl();
 
-      expect(filmCrawl.state().filmCrawl).toEqual(mockFilmCrawlData);
+      expect(filmCrawl.state().filmCrawl).toEqual(mockData.cleanFilmData);
     });
 
     it('sets state.errorStatus with error if fetch fails,', async () => {
@@ -89,16 +84,20 @@ describe('FilmCrawl', () => {
     });
 
     it('returns filmcrawl elements if filmcrawl set in state.filmCrawl', () => {
-      filmCrawl.setState({ filmCrawl: mockFilmCrawlData });
+      filmCrawl.setState({ filmCrawl: mockData.cleanFilmData });
       const renderFilmCrawl = filmCrawl.instance().renderFilmCrawl();
 
-      expect(renderFilmCrawl).toEqual(
-        <div>
-          <p>There is unrest in the Galactic Senate...</p>
-          <p>Attack of the Clones</p>
-          <p>2002-05-16</p>
-        </div>
+      const results = (
+        <section className="crawl-container">
+          <div className="crawl-content">
+            <p>Film Crawl</p>
+            <p>Movie Title</p>
+            <p>1982-09-18</p>
+          </div>
+        </section>
       );
+
+      expect(renderFilmCrawl).toEqual(results);
     });
 
     it('returns loading element if state.filmCrawl is null', () => {

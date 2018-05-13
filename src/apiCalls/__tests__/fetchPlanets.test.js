@@ -7,6 +7,7 @@ describe('planetData', () => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
+
   describe('fetchPlanets', () => {
     it('matches snapshot', async () => {
       await expect(fetchPlanets).toMatchSnapshot();
@@ -21,36 +22,10 @@ describe('planetData', () => {
       await expect(doFetch).toHaveBeenCalled();
     });
 
-    it('calls fetchResidents', async () => {
-      // ????????????????
-
-      doFetch.mockImplementation(() =>
-        Promise.resolve(mockData.fetchedPlanetsData)
-      );
-
-      fetchResidents = jest
-        .fn()
-        .mockImplementation(() => Promise.resolve(mockData.cleanResidentsData));
-
-      // fetchResidents = jest.fn();
-      // const fetchResidents = jest.spyOn(fetchResidents);
-
-      await fetchPlanets();
-
-      await expect(fetchResidents).toHaveBeenCalled();
-    });
-
     it('returns planets data if fetches are successful', async () => {
       doFetch.mockImplementation(() =>
         Promise.resolve(mockData.fetchedPlanetsData)
       );
-
-      const fetchResidents = jest
-        .fn()
-        .mockImplementation(() => mockData.fetchedResidentsData);
-      // console.log('fetchResidents:', fetchResidents());
-
-      // console.log('fetchPlanets: ', await fetchPlanets());
 
       await expect(fetchPlanets()).resolves.toEqual(mockData.cleanPlanetsData);
     });
@@ -64,10 +39,10 @@ describe('planetData', () => {
   });
   describe('fetchResidents', () => {
     it('calls doFetch with correct args', async () => {
+      const mockURL = 'https://swapi.co/api/mock';
       doFetch.mockImplementation(mockURL =>
         Promise.resolve(mockData.fetchedResidentsData)
       );
-      const mockURL = 'https://swapi.co/api/mock';
       await fetchResidents(mockURL);
 
       expect(doFetch).toHaveBeenCalledWith(mockURL);

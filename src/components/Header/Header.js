@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ numFavs }) => {
   return (
     <section className="Header">
       <h1>SWapiBox</h1>
@@ -20,7 +20,7 @@ const Header = () => {
 
       <NavLink className="navlink" to="/favorites">
         Favorites
-        {/* <span>{props.numFavorites}</span> */}
+        <span>:{numFavs}</span>
       </NavLink>
     </section>
   );

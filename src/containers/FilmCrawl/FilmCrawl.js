@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { fetchFilmCrawl } from '../../apiCalls/fetchFilmCrawl';
-import "./FilmCrawl.css";
+import './FilmCrawl.css';
 
 class FilmCrawl extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       filmCrawl: null,
