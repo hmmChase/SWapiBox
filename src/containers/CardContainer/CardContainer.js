@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../Card/Card';
+import Card from '../../components/Card/Card';
 import './CardContainer.css';
 import { fetchPeople } from '../../apiCalls/fetchPeople';
 import { fetchPlanets } from '../../apiCalls/fetchPlanets';
@@ -23,26 +23,16 @@ class CardContainer extends Component {
   }
 
   getCategoryData = async category => {
-    console.log('category:', category);
-    console.log('in code: ', this.state);
     if (this.state[category].length === 0) {
-      console.log('after if conditon');
       switch (category) {
         case 'people':
-          console.log('people case');
           this.setState({ people: await fetchPeople() });
           break;
-
         case 'planets':
-          console.log('planets case');
           this.setState({ planets: await fetchPlanets() });
           break;
-
         case 'vehicles':
-          console.log('after vehicles case');
-          console.log('after vehicles func');
           this.setState({ vehicles: await fetchVehicles() });
-          console.log('after vehicles setState');
           break;
         default:
           break;
@@ -68,6 +58,7 @@ class CardContainer extends Component {
     } else {
       this.addFavorite(favoriteObj);
     }
+    this.props.updateFavAmt();
   };
 
   removeFavorite(favoriteObj) {
@@ -88,29 +79,33 @@ class CardContainer extends Component {
     });
   }
 
-  renderCards = () => {
-    if (this.state[this.state.category].length > 0) {
-      return this.state[this.state.category].map((dataObj, index) => {
-        
-        const favoriteCardNames = this.state.favorites.map(
-          favorite => favorite.name
-        );
-        const favoriteBool = favoriteCardNames.includes(dataObj.name);
-        return (
-          <Card
-            key={'card' + index}
-            dataObj={dataObj}
-            toggleFavorite={this.toggleFavorite}
-            favoriteBool={favoriteBool}
-          />
-        );
-      });
-    }
-    return <p>...loading</p>;
+  createCards = () => {
+    return this.state[this.state.category].map((dataObj, index) => {
+      const favoriteCardNames = this.state.favorites.map(
+        favorite => favorite.name
+      );
+      const favoriteBool = favoriteCardNames.includes(dataObj.name);
+      return (
+        <Card
+          key={'card' + index}
+          dataObj={dataObj}
+          toggleFavorite={this.toggleFavorite}
+          favoriteBool={favoriteBool}
+        />
+      );
+    });
   };
 
   render() {
-    return <section className="Card-container">{this.renderCards()}</section>;
+    return (
+      <section className="Card-container">
+        {this.state[this.state.category].length > 0
+          ? this.createCards()
+          : this.state.category === 'favorites'
+            ? 'Favorite, you need'
+            : '...loading'}
+      </section>
+    );
   }
 }
 
