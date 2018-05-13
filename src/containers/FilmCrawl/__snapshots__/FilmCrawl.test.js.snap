@@ -169,13 +169,13 @@ ShallowWrapper {
                 className="crawl-content"
         >
                 <p>
-                        There is unrest in the Galactic Senate...
+                        Film Crawl
                 </p>
                 <p>
-                        Attack of the Clones
+                        Movie Title
                 </p>
                 <p>
-                        2002-05-16
+                        1982-09-18
                 </p>
         </div>
 </section>,
@@ -191,13 +191,13 @@ ShallowWrapper {
           className="crawl-content"
 >
           <p>
-                    There is unrest in the Galactic Senate...
+                    Film Crawl
           </p>
           <p>
-                    Attack of the Clones
+                    Movie Title
           </p>
           <p>
-                    2002-05-16
+                    1982-09-18
           </p>
 </div>,
         "className": "crawl-container",
@@ -210,13 +210,13 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <p>
-              There is unrest in the Galactic Senate...
+              Film Crawl
 </p>,
             <p>
-              Attack of the Clones
+              Movie Title
 </p>,
             <p>
-              2002-05-16
+              1982-09-18
 </p>,
           ],
           "className": "crawl-content",
@@ -228,10 +228,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "There is unrest in the Galactic Senate...",
+              "children": "Film Crawl",
             },
             "ref": null,
-            "rendered": "There is unrest in the Galactic Senate...",
+            "rendered": "Film Crawl",
             "type": "p",
           },
           Object {
@@ -239,10 +239,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Attack of the Clones",
+              "children": "Movie Title",
             },
             "ref": null,
-            "rendered": "Attack of the Clones",
+            "rendered": "Movie Title",
             "type": "p",
           },
           Object {
@@ -250,10 +250,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "2002-05-16",
+              "children": "1982-09-18",
             },
             "ref": null,
-            "rendered": "2002-05-16",
+            "rendered": "1982-09-18",
             "type": "p",
           },
         ],
@@ -276,13 +276,13 @@ ShallowWrapper {
                     className="crawl-content"
           >
                     <p>
-                              There is unrest in the Galactic Senate...
+                              Film Crawl
                     </p>
                     <p>
-                              Attack of the Clones
+                              Movie Title
                     </p>
                     <p>
-                              2002-05-16
+                              1982-09-18
                     </p>
           </div>
 </section>,
@@ -298,13 +298,13 @@ ShallowWrapper {
             className="crawl-content"
 >
             <p>
-                        There is unrest in the Galactic Senate...
+                        Film Crawl
             </p>
             <p>
-                        Attack of the Clones
+                        Movie Title
             </p>
             <p>
-                        2002-05-16
+                        1982-09-18
             </p>
 </div>,
           "className": "crawl-container",
@@ -317,13 +317,13 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <p>
-                There is unrest in the Galactic Senate...
+                Film Crawl
 </p>,
               <p>
-                Attack of the Clones
+                Movie Title
 </p>,
               <p>
-                2002-05-16
+                1982-09-18
 </p>,
             ],
             "className": "crawl-content",
@@ -335,10 +335,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "There is unrest in the Galactic Senate...",
+                "children": "Film Crawl",
               },
               "ref": null,
-              "rendered": "There is unrest in the Galactic Senate...",
+              "rendered": "Film Crawl",
               "type": "p",
             },
             Object {
@@ -346,10 +346,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Attack of the Clones",
+                "children": "Movie Title",
               },
               "ref": null,
-              "rendered": "Attack of the Clones",
+              "rendered": "Movie Title",
               "type": "p",
             },
             Object {
@@ -357,10 +357,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "2002-05-16",
+                "children": "1982-09-18",
               },
               "ref": null,
-              "rendered": "2002-05-16",
+              "rendered": "1982-09-18",
               "type": "p",
             },
           ],
