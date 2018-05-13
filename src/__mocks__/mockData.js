@@ -83,6 +83,18 @@ export const categoryData = [
   }
 ];
 
+export const fetchedFilmData = {
+  opening_crawl: 'Film Crawl',
+  title: 'Movie Title',
+  release_date: '1982-09-18'
+};
+
+export const cleanFilmData = {
+  crawl: fetchedFilmData.opening_crawl,
+  title: fetchedFilmData.title,
+  date: fetchedFilmData.release_date
+};
+
 export const fetchedPeopleData = {
   results: [
     {
@@ -245,11 +257,11 @@ export const cleanResidentsData = 'Leia Organa';
 
 export const cleanPlanetsData = [
   {
-    name: 'Alderaan',
-    terrain: 'grasslands, mountains',
-    population: '2000000000',
     climate: 'temperate',
-    residents: 'Leia Organa'
+    name: 'Alderaan',
+    population: '2000000000',
+    residents: '',
+    terrain: 'grasslands, mountains'
   }
 ];
 
@@ -288,22 +300,20 @@ export const cleanVehicleData = [
   }
 ];
 
-export const mockCleanHomeWorldData = {
+export const cleanHomeWorldData = {
   homeWorld: 'Tatooine',
   population: '200000'
 };
 
-export const mockCleanSpeciesData = {
+export const cleanSpeciesData = {
   species: 'Human'
 };
 
-export const mockCleanPeopleData = [
+export const cleanPeopleData = [
   {
+    homeWorld: undefined,
     name: 'C-3PO',
-    homeWorld: 'Tatooine',
-    population: '200000',
-    species: 'Human'
-    // ...mockCleanHomeWorldData,
-    // ...mockCleanSpeciesData
+    population: undefined,
+    species: undefined
   }
 ];
