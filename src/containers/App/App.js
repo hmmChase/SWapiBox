@@ -2,50 +2,54 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../../components/Header/Header';
-import CardContainer from '../../components/CardContainer/CardContainer';
+import CardContainer from '../CardContainer/CardContainer';
 import FilmCrawl from '../FilmCrawl/FilmCrawl';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.state = {};
+    this.state = { numFavs: 0 };
   }
 
-  componentDidMount = () => {};
+  componentDidMount = () => {
+    this.updateFavAmt();
+  };
 
-  numFavorites = () => {
-    
-  }
-
-  // setFavorites = category => {
-  //   this.setState({
-  //     category,
-  //     categoryData: this.state.favorites
-  //   });
-  // };
+  updateFavAmt = () => {
+    const numFavs = JSON.parse(localStorage.getItem('favorites')).length;
+    this.setState({ numFavs });
+  };
 
   render() {
     return (
       <main className="App">
-        <Header />
+        <Header numFavs={this.state.numFavs} />
         {/* <Switch> */}
         <Route exact path="/" component={FilmCrawl} />
         <Route
           path="/people"
-          render={({ match }) => <CardContainer match={match} />}
+          render={({ match }) => (
+            <CardContainer match={match} updateFavAmt={this.updateFavAmt} />
+          )}
         />
         <Route
           path="/planets"
-          render={({ match }) => <CardContainer match={match} />}
+          render={({ match }) => (
+            <CardContainer match={match} updateFavAmt={this.updateFavAmt} />
+          )}
         />
         <Route
           path="/vehicles"
-          render={({ match }) => <CardContainer match={match} />}
+          render={({ match }) => (
+            <CardContainer match={match} updateFavAmt={this.updateFavAmt} />
+          )}
         />
         <Route
           path="/favorites"
-          render={({ match }) => <CardContainer match={match} />}
+          render={({ match }) => (
+            <CardContainer match={match} updateFavAmt={this.updateFavAmt} />
+          )}
         />
         {/* </Switch> */}
       </main>

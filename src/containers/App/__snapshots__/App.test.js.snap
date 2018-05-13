@@ -19,7 +19,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Header
-          setCategory={undefined}
+          numFavs={0}
 />,
         <Route
           component={[Function]}
@@ -52,7 +52,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "setCategory": undefined,
+          "numFavs": 0,
         },
         "ref": null,
         "rendered": null,
@@ -130,7 +130,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Header
-            setCategory={undefined}
+            numFavs={0}
 />,
           <Route
             component={[Function]}
@@ -163,7 +163,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "setCategory": undefined,
+            "numFavs": 0,
           },
           "ref": null,
           "rendered": null,
@@ -240,6 +240,7 @@ ShallowWrapper {
         "enableComponentDidUpdateOnSetState": true,
       },
     },
+    "disableLifecycleMethods": true,
   },
 }
 `;
