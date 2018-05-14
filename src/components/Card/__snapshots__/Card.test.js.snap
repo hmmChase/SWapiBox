@@ -38,21 +38,27 @@ ShallowWrapper {
           <h2>
             T-16 skyhopper
 </h2>,
-          <p>
+          <p
+            className="dataKey"
+>
             model
             : 
             <span>
                         T-16 skyhopper
             </span>
 </p>,
-          <p>
+          <p
+            className="dataKey"
+>
             class
             : 
             <span>
                         repulsorcraft
             </span>
 </p>,
-          <p>
+          <p
+            className="dataKey"
+>
             passengers
             : 
             <span>
@@ -100,6 +106,7 @@ ShallowWrapper {
               T-16 skyhopper
 </span>,
           ],
+          "className": "dataKey",
         },
         "ref": null,
         "rendered": Array [
@@ -131,6 +138,7 @@ ShallowWrapper {
               repulsorcraft
 </span>,
           ],
+          "className": "dataKey",
         },
         "ref": null,
         "rendered": Array [
@@ -162,6 +170,7 @@ ShallowWrapper {
               1
 </span>,
           ],
+          "className": "dataKey",
         },
         "ref": null,
         "rendered": Array [
@@ -200,21 +209,27 @@ ShallowWrapper {
             <h2>
               T-16 skyhopper
 </h2>,
-            <p>
+            <p
+              className="dataKey"
+>
               model
               : 
               <span>
                             T-16 skyhopper
               </span>
 </p>,
-            <p>
+            <p
+              className="dataKey"
+>
               class
               : 
               <span>
                             repulsorcraft
               </span>
 </p>,
-            <p>
+            <p
+              className="dataKey"
+>
               passengers
               : 
               <span>
@@ -262,6 +277,7 @@ ShallowWrapper {
                 T-16 skyhopper
 </span>,
             ],
+            "className": "dataKey",
           },
           "ref": null,
           "rendered": Array [
@@ -293,6 +309,7 @@ ShallowWrapper {
                 repulsorcraft
 </span>,
             ],
+            "className": "dataKey",
           },
           "ref": null,
           "rendered": Array [
@@ -324,6 +341,7 @@ ShallowWrapper {
                 1
 </span>,
             ],
+            "className": "dataKey",
           },
           "ref": null,
           "rendered": Array [
@@ -395,21 +413,27 @@ ShallowWrapper {
           <h2>
             T-16 skyhopper
 </h2>,
-          <p>
+          <p
+            className="dataKey"
+>
             model
             : 
             <span>
                         T-16 skyhopper
             </span>
 </p>,
-          <p>
+          <p
+            className="dataKey"
+>
             class
             : 
             <span>
                         repulsorcraft
             </span>
 </p>,
-          <p>
+          <p
+            className="dataKey"
+>
             passengers
             : 
             <span>
@@ -457,6 +481,7 @@ ShallowWrapper {
               T-16 skyhopper
 </span>,
           ],
+          "className": "dataKey",
         },
         "ref": null,
         "rendered": Array [
@@ -488,6 +513,7 @@ ShallowWrapper {
               repulsorcraft
 </span>,
           ],
+          "className": "dataKey",
         },
         "ref": null,
         "rendered": Array [
@@ -519,6 +545,7 @@ ShallowWrapper {
               1
 </span>,
           ],
+          "className": "dataKey",
         },
         "ref": null,
         "rendered": Array [
@@ -557,21 +584,27 @@ ShallowWrapper {
             <h2>
               T-16 skyhopper
 </h2>,
-            <p>
+            <p
+              className="dataKey"
+>
               model
               : 
               <span>
                             T-16 skyhopper
               </span>
 </p>,
-            <p>
+            <p
+              className="dataKey"
+>
               class
               : 
               <span>
                             repulsorcraft
               </span>
 </p>,
-            <p>
+            <p
+              className="dataKey"
+>
               passengers
               : 
               <span>
@@ -619,6 +652,7 @@ ShallowWrapper {
                 T-16 skyhopper
 </span>,
             ],
+            "className": "dataKey",
           },
           "ref": null,
           "rendered": Array [
@@ -650,6 +684,7 @@ ShallowWrapper {
                 repulsorcraft
 </span>,
             ],
+            "className": "dataKey",
           },
           "ref": null,
           "rendered": Array [
@@ -681,6 +716,7 @@ ShallowWrapper {
                 1
 </span>,
             ],
+            "className": "dataKey",
           },
           "ref": null,
           "rendered": Array [

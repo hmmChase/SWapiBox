@@ -24,11 +24,26 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "...loading",
+      "children": <p
+        className="pretext"
+>
+        ...loading
+</p>,
       "className": "Card-container",
     },
     "ref": null,
-    "rendered": "...loading",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "...loading",
+        "className": "pretext",
+      },
+      "ref": null,
+      "rendered": "...loading",
+      "type": "p",
+    },
     "type": "section",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -37,11 +52,26 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "...loading",
+        "children": <p
+          className="pretext"
+>
+          ...loading
+</p>,
         "className": "Card-container",
       },
       "ref": null,
-      "rendered": "...loading",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "...loading",
+          "className": "pretext",
+        },
+        "ref": null,
+        "rendered": "...loading",
+        "type": "p",
+      },
       "type": "section",
     },
   ],

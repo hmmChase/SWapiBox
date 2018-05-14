@@ -88,13 +88,13 @@ describe('FilmCrawl', () => {
       const renderFilmCrawl = filmCrawl.instance().renderFilmCrawl();
 
       const results = (
-        <section className="crawl-container">
+        <div className="crawl-container">
           <div className="crawl-content">
             <p>Film Crawl</p>
             <p>Movie Title</p>
             <p>1982-09-18</p>
           </div>
-        </section>
+        </div>
       );
 
       expect(renderFilmCrawl).toEqual(results);
@@ -103,7 +103,7 @@ describe('FilmCrawl', () => {
     it('returns loading element if state.filmCrawl is null', () => {
       const renderFilmCrawl = filmCrawl.instance().renderFilmCrawl();
 
-      expect(renderFilmCrawl).toEqual(<p>...loading</p>);
+      expect(renderFilmCrawl).toEqual(<p className="pretext">...loading</p>);
     });
   });
 });

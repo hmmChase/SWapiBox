@@ -17,10 +17,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <p>
+      "children": <p
+        className="pretext"
+>
         ...loading
 </p>,
-      "className": "crawl-container",
     },
     "ref": null,
     "rendered": Object {
@@ -29,6 +30,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "...loading",
+        "className": "pretext",
       },
       "ref": null,
       "rendered": "...loading",
@@ -42,10 +44,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <p>
+        "children": <p
+          className="pretext"
+>
           ...loading
 </p>,
-        "className": "crawl-container",
       },
       "ref": null,
       "rendered": Object {
@@ -54,6 +57,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "...loading",
+          "className": "pretext",
         },
         "ref": null,
         "rendered": "...loading",
@@ -92,7 +96,6 @@ ShallowWrapper {
       "children": <p>
         mock error
 </p>,
-      "className": "crawl-container",
     },
     "ref": null,
     "rendered": Object {
@@ -117,7 +120,6 @@ ShallowWrapper {
         "children": <p>
           mock error
 </p>,
-        "className": "crawl-container",
       },
       "ref": null,
       "rendered": Object {
@@ -162,7 +164,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <section
+      "children": <div
         className="crawl-container"
 >
         <div
@@ -178,8 +180,7 @@ ShallowWrapper {
                         1982-09-18
                 </p>
         </div>
-</section>,
-      "className": "crawl-container",
+</div>,
     },
     "ref": null,
     "rendered": Object {
@@ -259,7 +260,7 @@ ShallowWrapper {
         ],
         "type": "div",
       },
-      "type": "section",
+      "type": "div",
     },
     "type": "section",
   },
@@ -269,7 +270,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <section
+        "children": <div
           className="crawl-container"
 >
           <div
@@ -285,8 +286,7 @@ ShallowWrapper {
                               1982-09-18
                     </p>
           </div>
-</section>,
-        "className": "crawl-container",
+</div>,
       },
       "ref": null,
       "rendered": Object {
@@ -366,7 +366,7 @@ ShallowWrapper {
           ],
           "type": "div",
         },
-        "type": "section",
+        "type": "div",
       },
       "type": "section",
     },

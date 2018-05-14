@@ -6,7 +6,7 @@ import * as mockData from '../../__mocks__/mockData';
 describe('peopleData', () => {
   beforeEach(() => {
     jest.resetAllMocks();
-  }); 
+  });
 
   describe('fetchPeople', () => {
     it('matches snapshot', async () => {
@@ -27,9 +27,7 @@ describe('peopleData', () => {
         Promise.resolve(mockData.fetchedPeopleData)
       );
 
-      await expect(fetchPeople()).resolves.toEqual(
-        mockData.cleanPeopleData
-      );
+      await expect(fetchPeople()).resolves.toEqual(mockData.cleanPeopleData);
     });
 
     it('throws error if fetch fails', async () => {
@@ -42,10 +40,11 @@ describe('peopleData', () => {
 
   describe('fetchHomeWorld', () => {
     it('calls doFetch with correct args', async () => {
-      doFetch.mockImplementation(mockURL =>
+      const mockURL = 'https://swapi.co/api/mock';
+
+      doFetch.mockImplementation(() =>
         Promise.resolve(mockData.fetchedHomeWorldData)
       );
-      const mockURL = 'https://swapi.co/api/mock';
       await fetchHomeWorld(mockURL);
 
       expect(doFetch).toHaveBeenCalledWith(mockURL);

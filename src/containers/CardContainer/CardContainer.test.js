@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import CardContainer from './CardContainer';
 import { fetchPeople } from '../../apiCalls/fetchPeople';
 jest.mock('../../apiCalls/fetchPeople.js');
