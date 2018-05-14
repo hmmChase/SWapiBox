@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Exo+2|Open+Sans|Pathway+Gothic+One');
+
+html {
+  height: 100%;
+  font-family: 'Exo 2', sans-serif;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  min-height: 100%;
   color: #fff;
   background-color: #000;
 }

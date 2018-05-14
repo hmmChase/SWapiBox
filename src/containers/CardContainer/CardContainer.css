@@ -1,5 +1,14 @@
-.Card-container {  
+.Card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pretext {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  height: 80vh;
+  font-size: 2em;
 }

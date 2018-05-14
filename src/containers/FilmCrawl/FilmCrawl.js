@@ -33,22 +33,20 @@ class FilmCrawl extends Component {
     }
     if (filmCrawl) {
       return (
-        <section className="crawl-container">
+        <div className="crawl-container">
           <div className="crawl-content">
             <p>{this.state.filmCrawl.crawl}</p>
             <p>{this.state.filmCrawl.title}</p>
             <p>{this.state.filmCrawl.date}</p>
           </div>
-        </section>
+        </div>
       );
     }
-    return <p>...loading</p>;
+    return <p className="pretext">...loading</p>;
   };
 
   render() {
-    return (
-      <section className="crawl-container">{this.renderFilmCrawl()}</section>
-    );
+    return <section>{this.renderFilmCrawl()}</section>;
   }
 }
 

@@ -1,27 +1,37 @@
 article {
-  height: 250px;
-  width: 150px;
-  color: white;
-  margin: 10px;
-  border: 2px solid yellow;
-  background: rgba(0, 0, 0, 0.5);
   position: relative;
+  width: 150px;
+  min-height: 200px;
+  padding: 5px 10px 10px 10px;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: left;
 }
 
 h2 {
-  margin: 8px 0 8px 3px;
-  font-size: .8em;
   display: inline-block;
+  margin: 8px 0 8px 3px;
+  color: lightsalmon;
+  font-size: 0.8em;
+  text-decoration: underline;
+  letter-spacing: 1px;
 }
 
 img {
-  height: 25px;
   position: absolute;
-  right: 0;
+  top: -10px;
+  right: -10px;
+  height: 25px;
   cursor: pointer;
 }
 
-p {
+.dataKey {
   margin: 0;
-  font-size: .8em;
+  color: lightcoral;
+  font-size: 0.8em;
+}
+
+span {
+  color: #fff;
 }

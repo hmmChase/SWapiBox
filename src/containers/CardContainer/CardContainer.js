@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../components/Card/Card';
+import PropTypes from 'prop-types';
 import './CardContainer.css';
 import { fetchPeople } from '../../apiCalls/fetchPeople';
 import { fetchPlanets } from '../../apiCalls/fetchPlanets';
@@ -99,14 +100,20 @@ class CardContainer extends Component {
   render() {
     return (
       <section className="Card-container">
-        {this.state[this.state.category].length > 0
-          ? this.createCards()
-          : this.state.category === 'favorites'
-            ? 'Favorite, you need'
-            : '...loading'}
+        {this.state[this.state.category].length > 0 ? (
+          this.createCards()
+        ) : this.state.category === 'favorites' ? (
+          <p className="pretext">Favorites, you need</p>
+        ) : (
+          <p className="pretext">...loading</p>
+        )}
       </section>
     );
   }
 }
+
+CardContainer.propTypes = {
+  match: PropTypes.object.isRequired
+};
 
 export default CardContainer;

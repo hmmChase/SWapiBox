@@ -1,29 +1,50 @@
 .Header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  /* justify-items: center; */
-  /* align-content: space-between; */
+  justify-content: space-between;
   align-items: center;
+  padding: 0 50px 0 50px;
+  border-bottom: 2px solid yellow;
+  background-image: url(https://thumbs.gfycat.com/IgnorantDimpledHyrax-size_restricted.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  color: #000;
+  font-family: 'Audiowide', sans-serif;
+  -webkit-text-stroke: 1px yellow;
 }
 
 .categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 2em 0 2em;
 }
 
+.num-favs {
+  margin-left: 5px;
+}
+
 .navlink {
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 600;
-  background: none;
-  border: 2px solid yellow;
-  cursor: pointer;
-  font-size: 1.5em;
   padding: 10px;
+  border: 2px solid yellow;
   border-radius: 10px;
-  color: #fff;
-  text-decoration: none;
   margin: 0.5em;
+  background: none;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .navlink:hover {
   background: rgba(164, 164, 0, 0.5);
+}
+
+.active {
+  color: #feda4a;
 }

@@ -12,10 +12,10 @@ export const fetchPlanets = async () => {
       const resolveResidents = await Promise.all(residentsData);
       return {
         name: planet.name,
-        terrain: planet.terrain,
-        population: planet.population,
-        climate: planet.climate,
-        residents: resolveResidents.length
+        Terrain: planet.terrain,
+        Population: planet.population,
+        Climate: planet.climate,
+        Residents: resolveResidents.length
           ? resolveResidents.join(', ')
           : 'unknown'
       };
