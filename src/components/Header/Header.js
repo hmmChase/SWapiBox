@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Header.css';
 
 const Header = ({ numFavs }) => {
   return (
     <section className="Header">
-      <h1>SWapiBox</h1>
+      <h1 className="title">SWapiBox</h1>
       <div className="categories">
         <NavLink className="navlink" to="/people">
           People
@@ -19,11 +20,15 @@ const Header = ({ numFavs }) => {
       </div>
 
       <NavLink className="navlink" to="/favorites">
-        Favorites
-        <span>:{numFavs}</span>
+        Favorites:
+        <span className="num-favs">{numFavs}</span>
       </NavLink>
     </section>
   );
+};
+
+Header.propTypes = {
+  numFavs: PropTypes.number.isRequired
 };
 
 export default Header;

@@ -6,9 +6,9 @@ export const fetchVehicles = async () => {
   return vehiclesData.results.map(vehicle => {
     return {
       name: vehicle.name,
-      model: vehicle.model,
-      class: vehicle.vehicle_class,
-      passengers: vehicle.passengers
+      Model: vehicle.model,
+      Class: vehicle.vehicle_class,
+      Passengers: vehicle.passengers
     };
   });
 };

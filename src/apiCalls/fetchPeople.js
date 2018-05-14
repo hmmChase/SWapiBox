@@ -23,8 +23,8 @@ export const fetchHomeWorld = async homeworldURL => {
   try {
     const homeWorldData = await doFetch(homeworldURL);
     return {
-      homeWorld: homeWorldData.name,
-      population: homeWorldData.population
+      HomeWorld: homeWorldData.name,
+      Population: homeWorldData.population
     };
   } catch (error) {
     throw new Error(error.message);
@@ -35,7 +35,7 @@ export const fetchSpecies = async speciesURL => {
   try {
     const speciesData = await doFetch(speciesURL);
     return {
-      species: speciesData.name
+      Species: speciesData.name
     };
   } catch (error) {
     throw new Error(error.message);
