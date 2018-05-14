@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const randomFilmCrawl = {
   crawl: 'Film Crawl',
   title: 'Movie Title',
@@ -257,11 +259,11 @@ export const cleanResidentsData = 'Leia Organa';
 
 export const cleanPlanetsData = [
   {
-    climate: 'temperate',
+    Climate: 'temperate',
     name: 'Alderaan',
-    population: '2000000000',
-    residents: '',
-    terrain: 'grasslands, mountains'
+    Population: '2000000000',
+    Residents: '',
+    Terrain: 'grasslands, mountains'
   }
 ];
 
@@ -294,26 +296,26 @@ export const fetchedVehicleData = {
 export const cleanVehicleData = [
   {
     name: 'Sand Crawler',
-    model: 'Digger Crawler',
-    class: 'wheeled',
-    passengers: '30'
+    Model: 'Digger Crawler',
+    Class: 'wheeled',
+    Passengers: '30'
   }
 ];
 
 export const cleanHomeWorldData = {
-  homeWorld: 'Tatooine',
-  population: '200000'
+  HomeWorld: 'Tatooine',
+  Population: '200000'
 };
 
 export const cleanSpeciesData = {
-  species: 'Human'
+  Species: 'Human'
 };
 
 export const cleanPeopleData = [
   {
-    homeWorld: undefined,
+    HomeWorld: undefined,
     name: 'C-3PO',
-    population: undefined,
-    species: undefined
+    Population: undefined,
+    Species: undefined
   }
 ];

@@ -113,7 +113,8 @@ class CardContainer extends Component {
 }
 
 CardContainer.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  updateFavAmt: PropTypes.func.isRequired
 };
 
 export default CardContainer;

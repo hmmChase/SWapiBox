@@ -40,7 +40,7 @@ describe('planetData', () => {
   describe('fetchResidents', () => {
     it('calls doFetch with correct args', async () => {
       const mockURL = 'https://swapi.co/api/mock';
-      doFetch.mockImplementation(mockURL =>
+      doFetch.mockImplementation(() =>
         Promise.resolve(mockData.fetchedResidentsData)
       );
       await fetchResidents(mockURL);
