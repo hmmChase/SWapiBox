@@ -17,7 +17,9 @@ class App extends Component {
   };
 
   updateFavAmt = () => {
-    const numFavs = JSON.parse(localStorage.getItem('favorites')).length;
+    const numFavs = localStorage.getItem('favorites')
+      ? JSON.parse(localStorage.getItem('favorites')).length
+      : 0;
     this.setState({ numFavs });
   };
 
